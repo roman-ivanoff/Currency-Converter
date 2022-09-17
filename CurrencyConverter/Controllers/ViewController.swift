@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var firstEllipse: UIView!
 
+    var isSell = true
+    var isBuy = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
