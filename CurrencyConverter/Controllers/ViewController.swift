@@ -12,10 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        firstEllipse.clipsToBounds = true
-        firstEllipse.layer.cornerRadius = 60
-        firstEllipse.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
 
 
