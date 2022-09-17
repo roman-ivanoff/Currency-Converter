@@ -56,15 +56,39 @@
 		FD64BF8028CF2F2A00010811 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				FDBE57B528D6434F00E7BD4D /* Controllers */,
+				FD64BF8728CF2F2A00010811 /* Main.storyboard */,
+				FDBE57B728D6436D00E7BD4D /* Supporting Files */,
+				FDBE57B628D6435B00E7BD4D /* Resources */,
+			);
+			path = CurrencyConverter;
+			sourceTree = "<group>";
+		};
+		FDBE57B528D6434F00E7BD4D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD64BF8528CF2F2A00010811 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FDBE57B628D6435B00E7BD4D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD64BF8A28CF2F2D00010811 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FDBE57B728D6436D00E7BD4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				FD64BF8128CF2F2A00010811 /* AppDelegate.swift */,
 				FD64BF8328CF2F2A00010811 /* SceneDelegate.swift */,
-				FD64BF8528CF2F2A00010811 /* ViewController.swift */,
-				FD64BF8728CF2F2A00010811 /* Main.storyboard */,
-				FD64BF8A28CF2F2D00010811 /* Assets.xcassets */,
 				FD64BF8C28CF2F2D00010811 /* LaunchScreen.storyboard */,
 				FD64BF8F28CF2F2D00010811 /* Info.plist */,
 			);
-			path = CurrencyConverter;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +312,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				INFOPLIST_FILE = "CurrencyConverter/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -316,7 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				INFOPLIST_FILE = "CurrencyConverter/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
