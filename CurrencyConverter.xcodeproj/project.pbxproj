@@ -13,6 +13,7 @@
 		FD64BF8928CF2F2A00010811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8728CF2F2A00010811 /* Main.storyboard */; };
 		FD64BF8B28CF2F2D00010811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8A28CF2F2D00010811 /* Assets.xcassets */; };
 		FD64BF8E28CF2F2D00010811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8C28CF2F2D00010811 /* LaunchScreen.storyboard */; };
+		FDDD62C428D6669F0026A78C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = FDDD62C328D6669F0026A78C /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FD64BF8A28CF2F2D00010811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD64BF8D28CF2F2D00010811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD64BF8F28CF2F2D00010811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDDD62C328D6669F0026A78C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		FDBE57B628D6435B00E7BD4D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDDD62C328D6669F0026A78C /* Fonts */,
 				FD64BF8A28CF2F2D00010811 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -152,6 +155,7 @@
 				FD64BF8E28CF2F2D00010811 /* LaunchScreen.storyboard in Resources */,
 				FD64BF8B28CF2F2D00010811 /* Assets.xcassets in Resources */,
 				FD64BF8928CF2F2A00010811 /* Main.storyboard in Resources */,
+				FDDD62C428D6669F0026A78C /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
