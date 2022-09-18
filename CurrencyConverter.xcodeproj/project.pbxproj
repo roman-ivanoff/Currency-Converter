@@ -13,6 +13,8 @@
 		FD64BF8928CF2F2A00010811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8728CF2F2A00010811 /* Main.storyboard */; };
 		FD64BF8B28CF2F2D00010811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8A28CF2F2D00010811 /* Assets.xcassets */; };
 		FD64BF8E28CF2F2D00010811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8C28CF2F2D00010811 /* LaunchScreen.storyboard */; };
+		FD77E14728D7BF3C00464759 /* CurrencyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD77E14628D7BF3C00464759 /* CurrencyItem.xib */; };
+		FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77E14828D7BF4500464759 /* CurrencyItem.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
 		FDDD62C428D6669F0026A78C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = FDDD62C328D6669F0026A78C /* Fonts */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		FD64BF8A28CF2F2D00010811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD64BF8D28CF2F2D00010811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD64BF8F28CF2F2D00010811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD77E14628D7BF3C00464759 /* CurrencyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyItem.xib; sourceTree = "<group>"; };
+		FD77E14828D7BF4500464759 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
 		FDDD62C328D6669F0026A78C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +64,7 @@
 		FD64BF8028CF2F2A00010811 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				FDC1507228D7B937002706D1 /* Views */,
 				FDBAECD928D766F90047AC6F /* Extensions */,
 				FDBE57B528D6434F00E7BD4D /* Controllers */,
 				FD64BF8728CF2F2A00010811 /* Main.storyboard */,
@@ -103,6 +108,15 @@
 				FD64BF8F28CF2F2D00010811 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDC1507228D7B937002706D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD77E14628D7BF3C00464759 /* CurrencyItem.xib */,
+				FD77E14828D7BF4500464759 /* CurrencyItem.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +180,7 @@
 			files = (
 				FD64BF8E28CF2F2D00010811 /* LaunchScreen.storyboard in Resources */,
 				FD64BF8B28CF2F2D00010811 /* Assets.xcassets in Resources */,
+				FD77E14728D7BF3C00464759 /* CurrencyItem.xib in Resources */,
 				FD64BF8928CF2F2A00010811 /* Main.storyboard in Resources */,
 				FDDD62C428D6669F0026A78C /* Fonts in Resources */,
 			);
@@ -203,6 +218,7 @@
 				FD64BF8228CF2F2A00010811 /* AppDelegate.swift in Sources */,
 				FD64BF8428CF2F2A00010811 /* SceneDelegate.swift in Sources */,
 				FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */,
+				FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
