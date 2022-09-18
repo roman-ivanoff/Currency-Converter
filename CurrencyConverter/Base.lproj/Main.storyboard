@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -28,22 +33,42 @@
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
+                                <rect key="frame" x="16" y="617" width="358" height="14.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 May 2021 7:03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-gb-Ksl">
+                                <rect key="frame" x="16" y="635.66666666666663" width="358" height="14.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="55W-Ak-S7a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5SO-sz-iKC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55W-Ak-S7a" secondAttribute="trailing" id="5ek-Qj-rVr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LCN-Gq-RIj" secondAttribute="trailing" constant="16" id="7XX-cV-djw"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB"/>
                             <constraint firstItem="55W-Ak-S7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D19-mc-dWG"/>
+                            <constraint firstItem="9S0-gb-Ksl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lcu-Iv-HYs"/>
                             <constraint firstAttribute="bottom" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="243" id="MRR-rH-CVH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nA6-h6-dt2" secondAttribute="trailing" constant="16" id="PeY-Yd-Qc0"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="Z3k-Xa-rTx"/>
+                            <constraint firstItem="LCN-Gq-RIj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZUW-ad-WYm"/>
+                            <constraint firstItem="LCN-Gq-RIj" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="16" id="ghp-2g-puL"/>
+                            <constraint firstItem="9S0-gb-Ksl" firstAttribute="top" secondItem="LCN-Gq-RIj" secondAttribute="bottom" constant="4" id="pVo-dK-rRM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9S0-gb-Ksl" secondAttribute="trailing" constant="16" id="xAu-mR-VYW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="firstEllipse" destination="55W-Ak-S7a" id="gFl-W3-5wb"/>
+                        <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
+                        <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

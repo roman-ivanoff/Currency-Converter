@@ -10,7 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var firstEllipse: UIView!
     @IBOutlet weak var converterView: UIView!
-    
+    @IBOutlet weak var lastUpdatedDateLabel: UILabel!
+    @IBOutlet weak var lastUpdatedTextLabel: UILabel!
+
     var isSell = true
     var isBuy = false
 
@@ -27,6 +29,9 @@ class ViewController: UIViewController {
         converterView.layer.shadowOpacity = 1
         converterView.layer.shadowRadius = 4
         converterView.layer.shadowOffset = CGSize(width: 0, height: 4)
+
+        lastUpdatedTextLabel.setLineHeight(lineHeight: 1.46)
+        lastUpdatedDateLabel.setLineHeight(lineHeight: 1.46)
     }
 }
 
