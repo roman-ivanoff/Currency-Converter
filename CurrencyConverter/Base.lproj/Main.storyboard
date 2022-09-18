@@ -24,16 +24,25 @@
                                     <constraint firstAttribute="width" secondItem="55W-Ak-S7a" secondAttribute="height" multiplier="16:9" id="gQR-GD-N7a"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
+                                <rect key="frame" x="16" y="171" width="358" height="430"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="55W-Ak-S7a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5SO-sz-iKC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55W-Ak-S7a" secondAttribute="trailing" id="5ek-Qj-rVr"/>
+                            <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB"/>
                             <constraint firstItem="55W-Ak-S7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D19-mc-dWG"/>
+                            <constraint firstAttribute="bottom" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="243" id="MRR-rH-CVH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nA6-h6-dt2" secondAttribute="trailing" constant="16" id="PeY-Yd-Qc0"/>
+                            <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="Z3k-Xa-rTx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="firstEllipse" destination="55W-Ak-S7a" id="gFl-W3-5wb"/>
                     </connections>
                 </viewController>
