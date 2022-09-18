@@ -58,7 +58,7 @@ class ViewController: UIViewController {
                 btn.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
             }
     }
-    
+
     @IBAction func sellAction(_ sender: UIButton) {
         isSell = true
         isBuy = false
@@ -75,4 +75,3 @@ class ViewController: UIViewController {
         changeButtonColorToWhite(sellButton)
     }
 }
-

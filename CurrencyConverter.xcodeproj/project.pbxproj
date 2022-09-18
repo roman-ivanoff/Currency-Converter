@@ -115,6 +115,7 @@
 				FD64BF7A28CF2F2A00010811 /* Sources */,
 				FD64BF7B28CF2F2A00010811 /* Frameworks */,
 				FD64BF7C28CF2F2A00010811 /* Resources */,
+				FDBAECDC28D77B830047AC6F /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -171,6 +172,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FDBAECDC28D77B830047AC6F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD64BF7A28CF2F2A00010811 /* Sources */ = {
