@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastUpdatedTextLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var sellButton: UIButton!
+    @IBOutlet weak var eurCurrencyView: CurrencyItem!
+    @IBOutlet weak var usdCurrencyView: CurrencyItem!
+    @IBOutlet weak var uahCurrencyView: CurrencyItem!
 
     var isSell = true
     var isBuy = false
@@ -37,6 +40,9 @@ class ViewController: UIViewController {
 
         sellButton.layer.cornerRadius = 6
         buyButton.layer.cornerRadius = 6
+
+        eurCurrencyView.currencyLabel.text = "EUR"
+        usdCurrencyView.currencyLabel.text = "USD"
     }
 
     private func changeButtonColorToBlue(_ btn: UIButton) {

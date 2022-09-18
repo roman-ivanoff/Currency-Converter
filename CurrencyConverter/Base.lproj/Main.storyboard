@@ -67,12 +67,42 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-BX-60M" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="100" width="326" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="j16-q7-QsK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-gh-N4p" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="160" width="326" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="J4N-xB-KgX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-bT-W3H" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="220" width="326" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="kbv-xE-m2n"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ZC6-gh-N4p" secondAttribute="trailing" constant="16" id="18U-a5-fqF"/>
                                     <constraint firstItem="Nja-qR-mWp" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="9fa-ez-LTs"/>
+                                    <constraint firstItem="ae7-BX-60M" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="DLh-dN-vkx"/>
                                     <constraint firstAttribute="trailing" secondItem="Nja-qR-mWp" secondAttribute="trailing" constant="16" id="HeG-hh-LTa"/>
+                                    <constraint firstItem="Pbm-bT-W3H" firstAttribute="top" secondItem="ZC6-gh-N4p" secondAttribute="bottom" constant="16" id="HwH-21-pY8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pbm-bT-W3H" secondAttribute="trailing" constant="16" id="JKk-S1-3sR"/>
+                                    <constraint firstItem="ZC6-gh-N4p" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="V7s-fQ-2L0"/>
+                                    <constraint firstItem="ae7-BX-60M" firstAttribute="top" secondItem="Nja-qR-mWp" secondAttribute="bottom" constant="40" id="hxn-zP-QGs"/>
+                                    <constraint firstItem="Pbm-bT-W3H" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="oeE-nf-hM4"/>
                                     <constraint firstItem="Nja-qR-mWp" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="ptj-O3-EAG"/>
+                                    <constraint firstItem="ZC6-gh-N4p" firstAttribute="top" secondItem="ae7-BX-60M" secondAttribute="bottom" constant="16" id="q22-DK-nbn"/>
+                                    <constraint firstAttribute="trailing" secondItem="ae7-BX-60M" secondAttribute="trailing" constant="16" id="yyk-VC-ipk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
@@ -109,10 +139,13 @@
                     <connections>
                         <outlet property="buyButton" destination="5qP-Be-oRj" id="GAe-qc-7jy"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
+                        <outlet property="eurCurrencyView" destination="Pbm-bT-W3H" id="i0I-UJ-gL9"/>
                         <outlet property="firstEllipse" destination="55W-Ak-S7a" id="gFl-W3-5wb"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
                         <outlet property="sellButton" destination="FHQ-IF-Jq7" id="NnW-Z4-LSj"/>
+                        <outlet property="uahCurrencyView" destination="ae7-BX-60M" id="H4a-R6-2mA"/>
+                        <outlet property="usdCurrencyView" destination="ZC6-gh-N4p" id="7hV-7q-3Jb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
