@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastUpdatedDateLabel: UILabel!
     @IBOutlet weak var lastUpdatedTextLabel: UILabel!
 
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var sellButton: UIButton!
     var isSell = true
     var isBuy = false
 
@@ -32,6 +34,11 @@ class ViewController: UIViewController {
 
         lastUpdatedTextLabel.setLineHeight(lineHeight: 1.46)
         lastUpdatedDateLabel.setLineHeight(lineHeight: 1.46)
+    }
+    
+    @IBAction func sellAction(_ sender: UIButton) {
+    }
+    @IBAction func buyAction(_ sender: UIButton) {
     }
 }
 

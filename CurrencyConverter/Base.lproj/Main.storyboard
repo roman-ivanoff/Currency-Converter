@@ -32,16 +32,57 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="Nja-qR-mWp">
+                                        <rect key="frame" x="16" y="16" width="326" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-IF-Jq7">
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="44"/>
+                                                <color key="backgroundColor" name="buttonColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="xIZ-Ev-JrH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Sell">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sellAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="raf-Gz-MhR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qP-Be-oRj">
+                                                <rect key="frame" x="199" y="0.0" width="127" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="RS5-pL-1kv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Buy">
+                                                    <color key="titleColor" name="buttonTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cg7-JE-93W"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Nja-qR-mWp" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="9fa-ez-LTs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nja-qR-mWp" secondAttribute="trailing" constant="16" id="HeG-hh-LTa"/>
+                                    <constraint firstItem="Nja-qR-mWp" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="ptj-O3-EAG"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
-                                <rect key="frame" x="16" y="617" width="358" height="14"/>
+                                <rect key="frame" x="16" y="617" width="358" height="14.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 May 2021 7:03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-gb-Ksl">
-                                <rect key="frame" x="16" y="635" width="358" height="14"/>
+                                <rect key="frame" x="16" y="635.66666666666663" width="358" height="14.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,10 +107,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buyButton" destination="5qP-Be-oRj" id="GAe-qc-7jy"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="firstEllipse" destination="55W-Ak-S7a" id="gFl-W3-5wb"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
+                        <outlet property="sellButton" destination="FHQ-IF-Jq7" id="NnW-Z4-LSj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,6 +121,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="buttonColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonTextColor">
+            <color red="0.0" green="0.19215686274509805" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="lastUpdatedColor">
             <color red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
