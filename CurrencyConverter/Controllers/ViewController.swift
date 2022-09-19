@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var usdCurrencyView: CurrencyItem!
     @IBOutlet weak var uahCurrencyView: CurrencyItem!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var addCurrencyButton: UIButton!
 
     var isSell = true
     var isBuy = false
@@ -83,5 +84,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func shareAction(_ sender: Any) {
+    }
+
+    @IBAction func addCurrencyAction(_ sender: UIButton) {
     }
 }

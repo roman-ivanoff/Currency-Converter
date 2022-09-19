@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -101,6 +102,22 @@
                                             <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYi-W7-YAG"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
+                                        <rect key="frame" x="16" y="336" width="326" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="AC6-nd-vZL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                        <color key="tintColor" name="buttonColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                        <state key="normal" title="Add Currency">
+                                            <color key="titleColor" name="buttonColor"/>
+                                            <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="small"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addCurrencyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmx-bb-SgD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -112,8 +129,11 @@
                                     <constraint firstAttribute="trailing" secondItem="cuQ-vv-13R" secondAttribute="trailing" constant="13" id="IOH-SR-NVR"/>
                                     <constraint firstAttribute="trailing" secondItem="Pbm-bT-W3H" secondAttribute="trailing" constant="16" id="JKk-S1-3sR"/>
                                     <constraint firstAttribute="bottom" secondItem="cuQ-vv-13R" secondAttribute="bottom" constant="14" id="MTE-21-Mum"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ke5-lW-Dqz" secondAttribute="bottom" constant="50" id="SRI-BN-Jga"/>
+                                    <constraint firstItem="Ke5-lW-Dqz" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="SYX-vX-ugv"/>
                                     <constraint firstItem="ZC6-gh-N4p" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="V7s-fQ-2L0"/>
                                     <constraint firstItem="ae7-BX-60M" firstAttribute="top" secondItem="Nja-qR-mWp" secondAttribute="bottom" constant="40" id="hxn-zP-QGs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ke5-lW-Dqz" secondAttribute="trailing" constant="16" id="n4I-kn-z6Y"/>
                                     <constraint firstItem="Pbm-bT-W3H" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="oeE-nf-hM4"/>
                                     <constraint firstItem="Nja-qR-mWp" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="ptj-O3-EAG"/>
                                     <constraint firstItem="ZC6-gh-N4p" firstAttribute="top" secondItem="ae7-BX-60M" secondAttribute="bottom" constant="16" id="q22-DK-nbn"/>
@@ -152,6 +172,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCurrencyButton" destination="Ke5-lW-Dqz" id="Vfp-m7-Ufh"/>
                         <outlet property="buyButton" destination="5qP-Be-oRj" id="GAe-qc-7jy"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="eurCurrencyView" destination="Pbm-bT-W3H" id="i0I-UJ-gL9"/>
@@ -170,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="buttonColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
