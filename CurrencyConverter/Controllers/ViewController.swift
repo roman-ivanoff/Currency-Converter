@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var eurCurrencyView: CurrencyItem!
     @IBOutlet weak var usdCurrencyView: CurrencyItem!
     @IBOutlet weak var uahCurrencyView: CurrencyItem!
+    @IBOutlet weak var shareButton: UIButton!
 
     var isSell = true
     var isBuy = false
@@ -79,5 +80,8 @@ class ViewController: UIViewController {
 
         changeButtonColorToBlue(buyButton)
         changeButtonColorToWhite(sellButton)
+    }
+    
+    @IBAction func shareAction(_ sender: Any) {
     }
 }
