@@ -24,13 +24,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55W-Ak-S7a">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="219.33333333333334"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="aCh-Qh-LCc">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="55W-Ak-S7a" secondAttribute="height" multiplier="16:9" id="gQR-GD-N7a"/>
+                                    <constraint firstAttribute="height" constant="270" id="QAI-xF-tz6"/>
                                 </constraints>
-                            </view>
+                                <variation key="heightClass=regular-widthClass=regular" image="headerIpad"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <subviews>
@@ -156,18 +156,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="55W-Ak-S7a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5SO-sz-iKC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55W-Ak-S7a" secondAttribute="trailing" id="5ek-Qj-rVr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LCN-Gq-RIj" secondAttribute="trailing" constant="16" id="7XX-cV-djw"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB"/>
-                            <constraint firstItem="55W-Ak-S7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D19-mc-dWG"/>
+                            <constraint firstItem="aCh-Qh-LCc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FeK-fY-Moi"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lcu-Iv-HYs"/>
                             <constraint firstAttribute="bottom" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="243" id="MRR-rH-CVH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nA6-h6-dt2" secondAttribute="trailing" constant="16" id="PeY-Yd-Qc0"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="Z3k-Xa-rTx"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZUW-ad-WYm"/>
+                            <constraint firstAttribute="trailing" secondItem="aCh-Qh-LCc" secondAttribute="trailing" id="ezu-fv-bVp"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="16" id="ghp-2g-puL"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="top" secondItem="LCN-Gq-RIj" secondAttribute="bottom" constant="4" id="pVo-dK-rRM"/>
+                            <constraint firstItem="aCh-Qh-LCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tUa-gA-nV0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9S0-gb-Ksl" secondAttribute="trailing" constant="16" id="xAu-mR-VYW"/>
                         </constraints>
                     </view>
@@ -176,7 +176,6 @@
                         <outlet property="buyButton" destination="5qP-Be-oRj" id="GAe-qc-7jy"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="eurCurrencyView" destination="Pbm-bT-W3H" id="i0I-UJ-gL9"/>
-                        <outlet property="firstEllipse" destination="55W-Ak-S7a" id="gFl-W3-5wb"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
                         <outlet property="sellButton" destination="FHQ-IF-Jq7" id="NnW-Z4-LSj"/>
@@ -191,6 +190,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="header" width="375" height="274"/>
+        <image name="headerIpad" width="812" height="274"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="buttonColor">
