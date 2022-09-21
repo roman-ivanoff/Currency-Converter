@@ -9,42 +9,50 @@ import Foundation
 
 class PopularExchangeRateService {
     var session: URLSession
-    let link = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5"
+    let link = "https://api.privatbank.ua/p24api/pubinfo"
     var dataTask: URLSessionDataTask?
 
     init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session
     }
 
-    func getExchangeRate(completion: @escaping(Result<PopularExchangeRates, QueryServiceError>) -> Void) {
+    func getExchangeRate(completion: @escaping(Result<[PopularExchangeRates], QueryServiceError>) -> Void) {
         dataTask?.cancel()
 
-        guard let url = URL(string: link) else {
-            return
-        }
+        if var urlComponents = URLComponents(string: link) {
+            urlComponents.queryItems = [
+                URLQueryItem(name: "json", value: nil),
+                URLQueryItem(name: "exchange", value: nil),
+                URLQueryItem(name: "coursid", value: "5")
+            ]
 
-        dataTask = session.dataTask(with: url) { data, _, _ in
-            guard let jsonData = data else {
-                DispatchQueue.main.async {
-                    completion(.failure(.noDataAvailable))
-                }
+            guard let url = urlComponents.url else {
                 return
             }
 
-            do {
-                let decoder = JSONDecoder()
-                let postResponse = try decoder.decode(PopularExchangeRates.self, from: jsonData)
-                DispatchQueue.main.async {
-                    completion(.success(postResponse))
+            dataTask = session.dataTask(with: url) { data, _, _ in
+                guard let jsonData = data else {
+                    DispatchQueue.main.async {
+                        completion(.failure(.noDataAvailable))
+                    }
+                    return
                 }
-            } catch {
-                print("error:---------- \(data)")
-                DispatchQueue.main.async {
-                    completion(.failure(.cannotProcessData))
+
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let postResponse = try decoder.decode([PopularExchangeRates].self, from: jsonData)
+                    DispatchQueue.main.async {
+                        completion(.success(postResponse))
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(.failure(.cannotProcessData))
+                    }
                 }
             }
-        }
 
-        dataTask?.resume()
+            dataTask?.resume()
+        }
     }
 }
