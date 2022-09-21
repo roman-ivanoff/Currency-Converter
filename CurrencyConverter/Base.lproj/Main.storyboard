@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -24,23 +24,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="peD-oR-MgP">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="Vdb-vc-YS1"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
-                                <rect key="frame" x="16" y="171" width="992" height="952"/>
+                                <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="Nja-qR-mWp">
-                                        <rect key="frame" x="16" y="16" width="960" height="44"/>
+                                        <rect key="frame" x="16" y="16" width="326" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-IF-Jq7">
-                                                <rect key="frame" x="0.0" y="0.0" width="444" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="44"/>
                                                 <color key="backgroundColor" name="buttonColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="xIZ-Ev-JrH"/>
@@ -55,7 +55,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qP-Be-oRj">
-                                                <rect key="frame" x="516" y="0.0" width="444" height="44"/>
+                                                <rect key="frame" x="199" y="0.0" width="127" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="RS5-pL-1kv"/>
                                                 </constraints>
@@ -71,28 +71,28 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-BX-60M" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="100" width="960" height="44"/>
+                                        <rect key="frame" x="16" y="100" width="326" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="j16-q7-QsK"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-gh-N4p" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="160" width="960" height="44"/>
+                                        <rect key="frame" x="16" y="160" width="326" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="J4N-xB-KgX"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-bT-W3H" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="220" width="960" height="44"/>
+                                        <rect key="frame" x="16" y="220" width="326" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kbv-xE-m2n"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuQ-vv-13R">
-                                        <rect key="frame" x="948" y="908" width="44" height="44"/>
+                                        <rect key="frame" x="314" y="386" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="76B-EP-pB1"/>
                                             <constraint firstAttribute="width" constant="44" id="Qum-hz-n4o"/>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
-                                        <rect key="frame" x="16" y="316" width="960" height="44"/>
+                                        <rect key="frame" x="16" y="316" width="326" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="AC6-nd-vZL"/>
                                         </constraints>
@@ -143,19 +143,19 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
-                                <rect key="frame" x="16" y="1139" width="992" height="14.5"/>
+                                <rect key="frame" x="16" y="617" width="358" height="14.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 May 2021 7:03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-gb-Ksl">
-                                <rect key="frame" x="16" y="1157.5" width="992" height="14.5"/>
+                                <rect key="frame" x="16" y="635.66666666666663" width="358" height="14.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmQ-Js-VmB">
-                                <rect key="frame" x="16" y="96" width="992" height="42"/>
+                                <rect key="frame" x="16" y="96" width="358" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="B8h-SI-Lv7"/>
                                 </constraints>
