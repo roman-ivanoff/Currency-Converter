@@ -70,6 +70,7 @@
 		FD64BF8028CF2F2A00010811 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				FDEBA0E828D9B91F00A42087 /* Services */,
 				FDCC3A1E28D9100B00261CDA /* Models */,
 				FDC1507228D7B937002706D1 /* Views */,
 				FDBAECD928D766F90047AC6F /* Extensions */,
@@ -134,6 +135,21 @@
 				FDCC3A2328D9103C00261CDA /* ArchiveOfExchangeRate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FDEBA0E828D9B91F00A42087 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FDEBA0E928D9B92900A42087 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FDEBA0E928D9B92900A42087 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

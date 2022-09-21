@@ -27,13 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="aCh-Qh-LCc">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="QAI-xF-tz6"/>
-                                </constraints>
-                                <variation key="heightClass=regular-widthClass=regular" image="headerIpad"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <subviews>
@@ -170,19 +163,16 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LCN-Gq-RIj" secondAttribute="trailing" constant="16" id="7XX-cV-djw"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB"/>
-                            <constraint firstItem="aCh-Qh-LCc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FeK-fY-Moi"/>
                             <constraint firstItem="BmQ-Js-VmB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ioo-Ug-DIj"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lcu-Iv-HYs"/>
                             <constraint firstAttribute="bottom" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="243" id="MRR-rH-CVH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nA6-h6-dt2" secondAttribute="trailing" constant="16" id="PeY-Yd-Qc0"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="Z3k-Xa-rTx"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZUW-ad-WYm"/>
-                            <constraint firstAttribute="trailing" secondItem="aCh-Qh-LCc" secondAttribute="trailing" id="ezu-fv-bVp"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="16" id="ghp-2g-puL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BmQ-Js-VmB" secondAttribute="trailing" constant="16" id="nnH-gB-JJs"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="top" secondItem="LCN-Gq-RIj" secondAttribute="bottom" constant="4" id="pVo-dK-rRM"/>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="BmQ-Js-VmB" secondAttribute="bottom" constant="33" id="rBP-Hl-mbP"/>
-                            <constraint firstItem="aCh-Qh-LCc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tUa-gA-nV0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9S0-gb-Ksl" secondAttribute="trailing" constant="16" id="xAu-mR-VYW"/>
                         </constraints>
                     </view>
@@ -205,8 +195,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="header" width="375" height="274"/>
-        <image name="headerIpad" width="812" height="274"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="buttonColor">
