@@ -10,6 +10,7 @@
 		FD27960A28DAE9CF006312B1 /* QueryServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960928DAE9CF006312B1 /* QueryServiceError.swift */; };
 		FD27960C28DAE9EE006312B1 /* PopularExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960B28DAE9EE006312B1 /* PopularExchangeRateService.swift */; };
 		FD27960E28DAEA1B006312B1 /* PopularExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960D28DAEA1B006312B1 /* PopularExchangeRates.swift */; };
+		FD27961028DAEA47006312B1 /* ArchiveOfExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960F28DAEA47006312B1 /* ArchiveOfExchangeRateService.swift */; };
 		FD64BF8228CF2F2A00010811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD64BF8128CF2F2A00010811 /* AppDelegate.swift */; };
 		FD64BF8428CF2F2A00010811 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD64BF8328CF2F2A00010811 /* SceneDelegate.swift */; };
 		FD64BF8628CF2F2A00010811 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD64BF8528CF2F2A00010811 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		FD27960928DAE9CF006312B1 /* QueryServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryServiceError.swift; sourceTree = "<group>"; };
 		FD27960B28DAE9EE006312B1 /* PopularExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularExchangeRateService.swift; sourceTree = "<group>"; };
 		FD27960D28DAEA1B006312B1 /* PopularExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularExchangeRates.swift; sourceTree = "<group>"; };
+		FD27960F28DAEA47006312B1 /* ArchiveOfExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveOfExchangeRateService.swift; sourceTree = "<group>"; };
 		FD64BF7E28CF2F2A00010811 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD64BF8128CF2F2A00010811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD64BF8328CF2F2A00010811 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				FD27960928DAE9CF006312B1 /* QueryServiceError.swift */,
 				FD27960B28DAE9EE006312B1 /* PopularExchangeRateService.swift */,
+				FD27960F28DAEA47006312B1 /* ArchiveOfExchangeRateService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				FDCC3A2428D9103C00261CDA /* ArchiveOfExchangeRate.swift in Sources */,
 				FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */,
 				FD27960E28DAEA1B006312B1 /* PopularExchangeRates.swift in Sources */,
+				FD27961028DAEA47006312B1 /* ArchiveOfExchangeRateService.swift in Sources */,
 				FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */,
 				FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */,
 				FD27960A28DAE9CF006312B1 /* QueryServiceError.swift in Sources */,
