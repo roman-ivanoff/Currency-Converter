@@ -7,6 +7,7 @@
 
 import UIKit
 
+// swiftlint:disable: legacy_constructor
 extension UILabel {
 
     func setLineHeight(lineHeight: CGFloat) {

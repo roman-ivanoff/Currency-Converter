@@ -22,16 +22,19 @@ class ArchiveOfExchangeRateService {
     ) {
         dataTask?.cancel()
 
-        var exchangeRateDate = date.isEmpty ? getCurrentDate() : date
+        let exchangeRateDate = date.isEmpty ? getCurrentDate() : date
 
         if var urlComponents = URLComponents(string: link) {
-            urlComponents.queryItems = [URLQueryItem(name: "json", value: nil), URLQueryItem(name: "date", value: exchangeRateDate)]
+            urlComponents.queryItems = [
+                URLQueryItem(name: "json", value: nil),
+                URLQueryItem(name: "date", value: exchangeRateDate)
+            ]
 
             guard let url = urlComponents.url else {
                 return
             }
 
-            dataTask = session.dataTask(with: url) { data, _, error in
+            dataTask = session.dataTask(with: url) { data, _, _ in
                 guard let jsonData = data else {
                     DispatchQueue.main.async {
                         completion(.failure(.noDataAvailable))
@@ -47,7 +50,6 @@ class ArchiveOfExchangeRateService {
                         completion(.success(postResponse))
                     }
                 } catch {
-                    print(error)
                     DispatchQueue.main.async {
                         completion(.failure(.cannotProcessData))
                     }

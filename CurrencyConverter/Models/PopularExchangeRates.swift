@@ -13,10 +13,10 @@ struct PopularExchangeRates: Codable {
     let buy: String
     let sale: String
 
-//    enum CodingKeys: String, CodingKey {
-//        case ccy
-//        case baseCcy = "base_ccy"
-//        case buy
-//        case sale
-//    }
+    enum CodingKeys: String, CodingKey {
+        case ccy
+        case baseCcy = "base_ccy"
+        case buy
+        case sale
+    }
 }

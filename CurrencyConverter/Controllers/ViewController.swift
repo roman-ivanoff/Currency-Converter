@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var addCurrencyButton: UIButton!
 
+    let rate = ArchiveOfExchangeRateService()
+
     var isSell = true
     var isBuy = false
 
@@ -27,6 +29,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setConverterView()
+
+        rate.getExchangeRate { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let rate):
+                print(rate)
+            }
+        }
     }
 
     private func setConverterView() {
@@ -82,7 +93,7 @@ class ViewController: UIViewController {
         changeButtonColorToBlue(buyButton)
         changeButtonColorToWhite(sellButton)
     }
-    
+
     @IBAction func shareAction(_ sender: Any) {
     }
 
