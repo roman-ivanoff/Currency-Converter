@@ -24,6 +24,7 @@
 		FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77E14828D7BF4500464759 /* CurrencyItem.swift */; };
 		FDB31C2B28DD98620079DFE1 /* LocalStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2A28DD98620079DFE1 /* LocalStorageRepository.swift */; };
 		FDB31C2D28DD987A0079DFE1 /* RemoteStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */; };
+		FDB31C3028DD98990079DFE1 /* RatesLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
 		FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */; };
 		FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */; };
@@ -51,6 +52,7 @@
 		FD77E14828D7BF4500464759 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
 		FDB31C2A28DD98620079DFE1 /* LocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageRepository.swift; sourceTree = "<group>"; };
 		FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStorageRepository.swift; sourceTree = "<group>"; };
+		FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalDataSource.swift; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
 		FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
@@ -112,12 +114,21 @@
 		FD6CBA9828DC3E8B00444A72 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				FDB31C2E28DD988E0079DFE1 /* RepositoriesImpl */,
 				FD6CBA9A28DC3E9C00444A72 /* Repository.swift */,
 				FD6CBA9C28DC3EA900444A72 /* UserDefaultsArchiveOfExchangeRateRepository.swift */,
 				FDB31C2A28DD98620079DFE1 /* LocalStorageRepository.swift */,
 				FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FDB31C2E28DD988E0079DFE1 /* RepositoriesImpl */ = {
+			isa = PBXGroup;
+			children = (
+				FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */,
+			);
+			path = RepositoriesImpl;
 			sourceTree = "<group>";
 		};
 		FDBAECD928D766F90047AC6F /* Extensions */ = {
@@ -290,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB31C3028DD98990079DFE1 /* RatesLocalDataSource.swift in Sources */,
 				FD64BF8628CF2F2A00010811 /* ViewController.swift in Sources */,
 				FD64BF8228CF2F2A00010811 /* AppDelegate.swift in Sources */,
 				FD64BF8428CF2F2A00010811 /* SceneDelegate.swift in Sources */,
