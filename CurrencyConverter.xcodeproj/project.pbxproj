@@ -26,6 +26,7 @@
 		FDB31C2D28DD987A0079DFE1 /* RemoteStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */; };
 		FDB31C3028DD98990079DFE1 /* RatesLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */; };
 		FDB31C3228DD98B60079DFE1 /* RatesRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C3128DD98B60079DFE1 /* RatesRemoteDataSource.swift */; };
+		FDB31C3428DD98CC0079DFE1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C3328DD98CC0079DFE1 /* DataManager.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
 		FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */; };
 		FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */; };
@@ -55,6 +56,7 @@
 		FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStorageRepository.swift; sourceTree = "<group>"; };
 		FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalDataSource.swift; sourceTree = "<group>"; };
 		FDB31C3128DD98B60079DFE1 /* RatesRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRemoteDataSource.swift; sourceTree = "<group>"; };
+		FDB31C3328DD98CC0079DFE1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
 		FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */,
 				FDB31C3128DD98B60079DFE1 /* RatesRemoteDataSource.swift */,
+				FDB31C3328DD98CC0079DFE1 /* DataManager.swift */,
 			);
 			path = RepositoriesImpl;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDB31C3028DD98990079DFE1 /* RatesLocalDataSource.swift in Sources */,
+				FDB31C3428DD98CC0079DFE1 /* DataManager.swift in Sources */,
 				FD64BF8628CF2F2A00010811 /* ViewController.swift in Sources */,
 				FD64BF8228CF2F2A00010811 /* AppDelegate.swift in Sources */,
 				FD64BF8428CF2F2A00010811 /* SceneDelegate.swift in Sources */,
