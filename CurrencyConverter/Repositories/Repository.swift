@@ -8,11 +8,7 @@
 import Foundation
 
 protocol Repository {
-    associatedtype T
-
-    func create()
-    func getAll() -> [T]?
-    func get(objectWith id: String) -> T?
-    func update(objectWith id: String)
-    func delete(objectWith id: String)
+    func getExchangeRatesFromRemote() -> [ExchangeRate]
+    func getExchangeRatesFromLocale() -> [ExchangeRate]
+    func saveExchangeRates(rates: [ExchangeRate])
 }
