@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD0D9F5C28E36C3F00F2F6C9 /* Date+Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D9F5B28E36C3F00F2F6C9 /* Date+Comparison.swift */; };
 		FD27960A28DAE9CF006312B1 /* QueryServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960928DAE9CF006312B1 /* QueryServiceError.swift */; };
 		FD27960C28DAE9EE006312B1 /* PopularExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960B28DAE9EE006312B1 /* PopularExchangeRateService.swift */; };
 		FD27960E28DAEA1B006312B1 /* PopularExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD27960D28DAEA1B006312B1 /* PopularExchangeRates.swift */; };
@@ -20,14 +19,8 @@
 		FD64BF8E28CF2F2D00010811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD64BF8C28CF2F2D00010811 /* LaunchScreen.storyboard */; };
 		FD6CBA9728DC3E7300444A72 /* DomainArchiveOfExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CBA9628DC3E7300444A72 /* DomainArchiveOfExchangeRate.swift */; };
 		FD6CBA9B28DC3E9C00444A72 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CBA9A28DC3E9C00444A72 /* Repository.swift */; };
-		FD6CBA9D28DC3EA900444A72 /* UserDefaultsArchiveOfExchangeRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CBA9C28DC3EA900444A72 /* UserDefaultsArchiveOfExchangeRateRepository.swift */; };
 		FD77E14728D7BF3C00464759 /* CurrencyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD77E14628D7BF3C00464759 /* CurrencyItem.xib */; };
 		FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77E14828D7BF4500464759 /* CurrencyItem.swift */; };
-		FDB31C2B28DD98620079DFE1 /* LocalStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2A28DD98620079DFE1 /* LocalStorageRepository.swift */; };
-		FDB31C2D28DD987A0079DFE1 /* RemoteStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */; };
-		FDB31C3028DD98990079DFE1 /* RatesLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */; };
-		FDB31C3228DD98B60079DFE1 /* RatesRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C3128DD98B60079DFE1 /* RatesRemoteDataSource.swift */; };
-		FDB31C3428DD98CC0079DFE1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB31C3328DD98CC0079DFE1 /* DataManager.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
 		FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */; };
 		FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */; };
@@ -36,7 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD0D9F5B28E36C3F00F2F6C9 /* Date+Comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Comparison.swift"; sourceTree = "<group>"; };
 		FD27960928DAE9CF006312B1 /* QueryServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryServiceError.swift; sourceTree = "<group>"; };
 		FD27960B28DAE9EE006312B1 /* PopularExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularExchangeRateService.swift; sourceTree = "<group>"; };
 		FD27960D28DAEA1B006312B1 /* PopularExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularExchangeRates.swift; sourceTree = "<group>"; };
@@ -51,14 +43,8 @@
 		FD64BF8F28CF2F2D00010811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6CBA9628DC3E7300444A72 /* DomainArchiveOfExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainArchiveOfExchangeRate.swift; sourceTree = "<group>"; };
 		FD6CBA9A28DC3E9C00444A72 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		FD6CBA9C28DC3EA900444A72 /* UserDefaultsArchiveOfExchangeRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsArchiveOfExchangeRateRepository.swift; sourceTree = "<group>"; };
 		FD77E14628D7BF3C00464759 /* CurrencyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyItem.xib; sourceTree = "<group>"; };
 		FD77E14828D7BF4500464759 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
-		FDB31C2A28DD98620079DFE1 /* LocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageRepository.swift; sourceTree = "<group>"; };
-		FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStorageRepository.swift; sourceTree = "<group>"; };
-		FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalDataSource.swift; sourceTree = "<group>"; };
-		FDB31C3128DD98B60079DFE1 /* RatesRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRemoteDataSource.swift; sourceTree = "<group>"; };
-		FDB31C3328DD98CC0079DFE1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
 		FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
@@ -122,9 +108,6 @@
 			children = (
 				FDB31C2E28DD988E0079DFE1 /* RepositoriesImpl */,
 				FD6CBA9A28DC3E9C00444A72 /* Repository.swift */,
-				FD6CBA9C28DC3EA900444A72 /* UserDefaultsArchiveOfExchangeRateRepository.swift */,
-				FDB31C2A28DD98620079DFE1 /* LocalStorageRepository.swift */,
-				FDB31C2C28DD987A0079DFE1 /* RemoteStorageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -132,9 +115,6 @@
 		FDB31C2E28DD988E0079DFE1 /* RepositoriesImpl */ = {
 			isa = PBXGroup;
 			children = (
-				FDB31C2F28DD98990079DFE1 /* RatesLocalDataSource.swift */,
-				FDB31C3128DD98B60079DFE1 /* RatesRemoteDataSource.swift */,
-				FDB31C3328DD98CC0079DFE1 /* DataManager.swift */,
 			);
 			path = RepositoriesImpl;
 			sourceTree = "<group>";
@@ -143,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */,
-				FD0D9F5B28E36C3F00F2F6C9 /* Date+Comparison.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,8 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDB31C3028DD98990079DFE1 /* RatesLocalDataSource.swift in Sources */,
-				FDB31C3428DD98CC0079DFE1 /* DataManager.swift in Sources */,
 				FD64BF8628CF2F2A00010811 /* ViewController.swift in Sources */,
 				FD64BF8228CF2F2A00010811 /* AppDelegate.swift in Sources */,
 				FD64BF8428CF2F2A00010811 /* SceneDelegate.swift in Sources */,
@@ -319,18 +296,13 @@
 				FD27960C28DAE9EE006312B1 /* PopularExchangeRateService.swift in Sources */,
 				FDCC3A2428D9103C00261CDA /* ArchiveOfExchangeRate.swift in Sources */,
 				FD6CBA9728DC3E7300444A72 /* DomainArchiveOfExchangeRate.swift in Sources */,
-				FDB31C2B28DD98620079DFE1 /* LocalStorageRepository.swift in Sources */,
-				FD6CBA9D28DC3EA900444A72 /* UserDefaultsArchiveOfExchangeRateRepository.swift in Sources */,
 				FD6CBA9B28DC3E9C00444A72 /* Repository.swift in Sources */,
-				FD0D9F5C28E36C3F00F2F6C9 /* Date+Comparison.swift in Sources */,
 				FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */,
 				FD27960E28DAEA1B006312B1 /* PopularExchangeRates.swift in Sources */,
 				FD27961028DAEA47006312B1 /* ArchiveOfExchangeRateService.swift in Sources */,
-				FDB31C2D28DD987A0079DFE1 /* RemoteStorageRepository.swift in Sources */,
 				FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */,
 				FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */,
 				FD27960A28DAE9CF006312B1 /* QueryServiceError.swift in Sources */,
-				FDB31C3228DD98B60079DFE1 /* RatesRemoteDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
