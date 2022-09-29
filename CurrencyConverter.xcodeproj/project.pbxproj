@@ -31,6 +31,7 @@
 		FDB9184328E5867C00E6B090 /* RatesLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9184228E5867C00E6B090 /* RatesLocalDataSource.swift */; };
 		FDB9184528E5869800E6B090 /* RatesRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9184428E5869800E6B090 /* RatesRemoteDataSource.swift */; };
 		FDB9184728E586BE00E6B090 /* CurrencyRate+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9184628E586BE00E6B090 /* CurrencyRate+Initialization.swift */; };
+		FDB9184928E586E200E6B090 /* CurrencyRate+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9184828E586E200E6B090 /* CurrencyRate+Description.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
 		FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */; };
 		FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */; };
@@ -65,6 +66,7 @@
 		FDB9184228E5867C00E6B090 /* RatesLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesLocalDataSource.swift; sourceTree = "<group>"; };
 		FDB9184428E5869800E6B090 /* RatesRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRemoteDataSource.swift; sourceTree = "<group>"; };
 		FDB9184628E586BE00E6B090 /* CurrencyRate+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+Initialization.swift"; sourceTree = "<group>"; };
+		FDB9184828E586E200E6B090 /* CurrencyRate+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+Description.swift"; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
 		FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */,
 				FD298BE028E4C53E00692E23 /* Date+Comparison.swift */,
 				FDB9184628E586BE00E6B090 /* CurrencyRate+Initialization.swift */,
+				FDB9184828E586E200E6B090 /* CurrencyRate+Description.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				FDB9184128E5865E00E6B090 /* RatesRemoteDataSourceProtocol.swift in Sources */,
 				FDB9183728E57EE800E6B090 /* Timestamped.swift in Sources */,
 				FDB9183528E57ED000E6B090 /* CurrencyRate.swift in Sources */,
+				FDB9184928E586E200E6B090 /* CurrencyRate+Description.swift in Sources */,
 				FDB9184328E5867C00E6B090 /* RatesLocalDataSource.swift in Sources */,
 				FDB9183B28E57F2A00E6B090 /* UserDefaultsKeys.swift in Sources */,
 				FDB9184728E586BE00E6B090 /* CurrencyRate+Initialization.swift in Sources */,
