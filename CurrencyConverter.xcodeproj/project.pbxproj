@@ -21,6 +21,7 @@
 		FD6CBA9B28DC3E9C00444A72 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6CBA9A28DC3E9C00444A72 /* Repository.swift */; };
 		FD77E14728D7BF3C00464759 /* CurrencyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD77E14628D7BF3C00464759 /* CurrencyItem.xib */; };
 		FD77E14928D7BF4500464759 /* CurrencyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD77E14828D7BF4500464759 /* CurrencyItem.swift */; };
+		FDB9183328E57EB300E6B090 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9183228E57EB300E6B090 /* Currency.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
 		FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */; };
 		FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */; };
@@ -45,6 +46,7 @@
 		FD6CBA9A28DC3E9C00444A72 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FD77E14628D7BF3C00464759 /* CurrencyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyItem.xib; sourceTree = "<group>"; };
 		FD77E14828D7BF4500464759 /* CurrencyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItem.swift; sourceTree = "<group>"; };
+		FDB9183228E57EB300E6B090 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
 		FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */,
 				FDCC3A2328D9103C00261CDA /* ArchiveOfExchangeRate.swift */,
 				FD27960D28DAEA1B006312B1 /* PopularExchangeRates.swift */,
+				FDB9183228E57EB300E6B090 /* Currency.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */,
 				FD27960C28DAE9EE006312B1 /* PopularExchangeRateService.swift in Sources */,
 				FDCC3A2428D9103C00261CDA /* ArchiveOfExchangeRate.swift in Sources */,
+				FDB9183328E57EB300E6B090 /* Currency.swift in Sources */,
 				FD6CBA9B28DC3E9C00444A72 /* Repository.swift in Sources */,
 				FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */,
 				FD298BE128E4C53E00692E23 /* Date+Comparison.swift in Sources */,
