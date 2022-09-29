@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var addCurrencyButton: UIButton!
 
-    let rate = ArchiveOfExchangeRateService()
+    let repository = RatesRepository(
+        localDataSource: RatesLocalDataSource(),
+        remoteDataSource: RatesRemoteDataSource()
+    )
 
     var isSell = true
     var isBuy = false
@@ -30,12 +33,12 @@ class ViewController: UIViewController {
 
         setConverterView()
 
-        rate.getExchangeRate { result in
+        repository.fetchRates { result in
             switch result {
+            case .success(let res):
+                print(res)
             case .failure(let error):
                 print(error)
-            case .success(let rate):
-                print(rate)
             }
         }
     }
