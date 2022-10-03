@@ -17,9 +17,9 @@ class RatesRepository: RatesRepositoryProtocol {
     }
 
     func fetchRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
-        if let localeRates = localDataSource.rates, !localeRates.createdAt.hasHourPassed {
+        if let localRates = localDataSource.rates, !localRates.createdAt.hasHourPassed {
             print("locale")
-            completion(.success(localeRates))
+            completion(.success(localRates))
         } else {
             remoteDataSource.fetchRates { [localDataSource] result in
                 print("remote")
