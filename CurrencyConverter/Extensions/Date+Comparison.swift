@@ -8,9 +8,7 @@
 import Foundation
 
 extension Date {
-    var hasHourPassed: Bool {
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone.current
-        return  calendar.compare(self, to: Date(), toGranularity: .hour).rawValue != 0
+    var isTheSameHour: Bool {
+        return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .hour)
     }
 }
