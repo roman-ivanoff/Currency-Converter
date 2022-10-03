@@ -17,7 +17,7 @@ class RatesRepository: RatesRepositoryProtocol {
     }
 
     func fetchRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
-        if let localRates = localDataSource.rates, !localRates.createdAt.isTheSameHour {
+        if let localRates = localDataSource.rates, localRates.createdAt.isTheSameHour {
             print("locale")
             completion(.success(localRates))
         } else {
