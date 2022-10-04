@@ -7,9 +7,65 @@
 
 import UIKit
 
+struct Section {
+    var sectionName: String
+    var sectionObjects: [CurrencyRate]
+}
+
 class CurrencyListViewController: UIViewController {
+    let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
+    var currencyRate: [CurrencyRate]!
+
+    var sections = [Section]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        registerCell(for: tableView, id: cellId)
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        let groupedDictionary = Dictionary(grouping: currencyRate, by: { $0.currency.rawValue.prefix(1) })
+        let sortedRates = groupedDictionary.sorted { $0.0 < $1.0 }
+
+        for (key, value) in sortedRates {
+            sections.append(Section(sectionName: String(key), sectionObjects: value))
+        }
+    }
+
+    private func registerCell(for tableView: UITableView, id: String) {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+    }
+}
+
+extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return currencyRate?.count ?? 0
+        return sections[section].sectionObjects.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.textLabel?.text = sections[indexPath.section]
+            .sectionObjects[indexPath.row]
+            .currency
+            .rawValue
+
+        return cell
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].sectionName
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }
