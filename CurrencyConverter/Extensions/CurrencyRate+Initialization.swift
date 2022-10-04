@@ -8,10 +8,13 @@
 import Foundation
 
 extension CurrencyRate {
-    init(response source: ExchangeRate) {
+    init?(response source: ExchangeRate) {
+        guard let currency = source.currency else {
+            return nil
+        }
         self.init(
             base: Currency(rawValue: source.baseCurrency.rawValue),
-            currency: Currency(rawValue: source.currency ?? "Not Found"),
+            currency: Currency(rawValue: currency),
             sale: Decimal(source.saleRateNB),
             purchase: Decimal(source.purchaseRateNB)
         )
