@@ -14,7 +14,7 @@ class RatesRemoteDataSource: RatesRemoteDataSourceProtocol {
             switch result {
             case .success(let rates):
                 let response = rates.exchangeRate
-                completion(.success(response.map(CurrencyRate.init(response:))))
+                completion(.success(response.compactMap(CurrencyRate.init(response:))))
             case .failure(let error):
                 completion(.failure(NSError(domain: error.localizedDescription, code: -1)))
             }
