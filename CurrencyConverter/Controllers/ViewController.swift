@@ -21,10 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var addCurrencyButton: UIButton!
 
-    let repository = RatesRepository(
-        localDataSource: RatesLocalDataSource(),
-        remoteDataSource: RatesRemoteDataSource()
-    )
+    let currencyRateModel = CurrencyRateModel()
 
     var isSell = true
     var isBuy = false
@@ -33,15 +30,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setConverterView()
-
-        repository.fetchRates { result in
-            switch result {
-            case .success(let res):
-                print(res)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        currencyRateModel.getRates()
+        self.lastUpdatedDateLabel.text =  self.formatDate(date: currencyRateModel.lastUpdateDate ?? Date())
     }
 
     private func setConverterView() {
@@ -103,11 +93,18 @@ class ViewController: UIViewController {
 
     @IBAction func addCurrencyAction(_ sender: UIButton) {
     }
+
+    private func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy h:mm a"
+
+        return formatter.string(from: date)
+    }
 }
-//
-//extension ViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destController = segue.destination as! CurrencyListViewController
+
+extension ViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destController = segue.destination as! CurrencyListViewController
 //        destController.currencyRate = currencyRateModel.sortRates()
-//    }
-//}
+    }
+}
