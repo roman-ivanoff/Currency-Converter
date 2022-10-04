@@ -7,6 +7,7 @@
 
 import UIKit
 
+// swiftlint: disable: force_cast
 class ViewController: UIViewController {
     @IBOutlet weak var firstEllipse: UIView!
     @IBOutlet weak var converterView: UIView!
@@ -103,3 +104,10 @@ class ViewController: UIViewController {
     @IBAction func addCurrencyAction(_ sender: UIButton) {
     }
 }
+//
+//extension ViewController {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destController = segue.destination as! CurrencyListViewController
+//        destController.currencyRate = currencyRateModel.sortRates()
+//    }
+//}

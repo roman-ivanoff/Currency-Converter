@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="980" y="3.5545023696682461"/>
         </scene>
-        <!--View Controller-->
+        <!--Currency List View Controller-->
         <scene sceneID="JnJ-Fc-eIb">
             <objects>
-                <viewController id="3bk-Ou-hNG" sceneMemberID="viewController">
+                <viewController id="3bk-Ou-hNG" customClass="CurrencyListViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3GQ-91-6nQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbX-Zm-vVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="-26"/>
+            <point key="canvasLocation" x="1949" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bsr-Bw-rHF">
