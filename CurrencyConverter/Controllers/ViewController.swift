@@ -13,9 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var converterView: UIView!
     @IBOutlet weak var lastUpdatedDateLabel: UILabel!
     @IBOutlet weak var lastUpdatedTextLabel: UILabel!
-    @IBOutlet weak var eurCurrencyView: CurrencyItem!
-    @IBOutlet weak var usdCurrencyView: CurrencyItem!
-    @IBOutlet weak var uahCurrencyView: CurrencyItem!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var addCurrencyButton: UIButton!
 

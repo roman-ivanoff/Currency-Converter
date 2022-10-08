@@ -36,27 +36,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-BX-60M" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="100" width="326" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="j16-q7-QsK"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-gh-N4p" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="160" width="326" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="J4N-xB-KgX"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-bT-W3H" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="220" width="326" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="kbv-xE-m2n"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuQ-vv-13R">
                                         <rect key="frame" x="314" y="386" width="44" height="44"/>
                                         <constraints>
@@ -87,22 +66,23 @@
                                             <segue destination="3bk-Ou-hNG" kind="showDetail" id="8dP-s3-2B4"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X5S-38-8pY">
+                                        <rect key="frame" x="16" y="16" width="326" height="32"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ZC6-gh-N4p" secondAttribute="trailing" constant="16" id="18U-a5-fqF"/>
-                                    <constraint firstItem="ae7-BX-60M" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="DLh-dN-vkx"/>
-                                    <constraint firstItem="Pbm-bT-W3H" firstAttribute="top" secondItem="ZC6-gh-N4p" secondAttribute="bottom" constant="16" id="HwH-21-pY8"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pbm-bT-W3H" secondAttribute="trailing" constant="16" id="JKk-S1-3sR"/>
+                                    <constraint firstAttribute="trailing" secondItem="X5S-38-8pY" secondAttribute="trailing" constant="16" id="0Ex-Ka-ZE1"/>
+                                    <constraint firstItem="X5S-38-8pY" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="Buo-a7-fCQ"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="SYX-vX-ugv"/>
-                                    <constraint firstItem="ZC6-gh-N4p" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="V7s-fQ-2L0"/>
                                     <constraint firstAttribute="trailing" secondItem="cuQ-vv-13R" secondAttribute="trailing" id="bpM-rp-ByV"/>
-                                    <constraint firstItem="Ke5-lW-Dqz" firstAttribute="top" secondItem="Pbm-bT-W3H" secondAttribute="bottom" constant="52" id="c4S-dd-dOj"/>
+                                    <constraint firstItem="X5S-38-8pY" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="fbj-d8-hMI"/>
                                     <constraint firstAttribute="trailing" secondItem="Ke5-lW-Dqz" secondAttribute="trailing" constant="16" id="n4I-kn-z6Y"/>
-                                    <constraint firstItem="Pbm-bT-W3H" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="oeE-nf-hM4"/>
-                                    <constraint firstItem="ZC6-gh-N4p" firstAttribute="top" secondItem="ae7-BX-60M" secondAttribute="bottom" constant="16" id="q22-DK-nbn"/>
                                     <constraint firstAttribute="bottom" secondItem="cuQ-vv-13R" secondAttribute="bottom" id="szz-rO-huO"/>
-                                    <constraint firstAttribute="trailing" secondItem="ae7-BX-60M" secondAttribute="trailing" constant="16" id="yyk-VC-ipk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
@@ -152,12 +132,9 @@
                     <connections>
                         <outlet property="addCurrencyButton" destination="Ke5-lW-Dqz" id="Vfp-m7-Ufh"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
-                        <outlet property="eurCurrencyView" destination="Pbm-bT-W3H" id="i0I-UJ-gL9"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
                         <outlet property="shareButton" destination="cuQ-vv-13R" id="SCM-kK-yRg"/>
-                        <outlet property="uahCurrencyView" destination="ae7-BX-60M" id="H4a-R6-2mA"/>
-                        <outlet property="usdCurrencyView" destination="ZC6-gh-N4p" id="7hV-7q-3Jb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
