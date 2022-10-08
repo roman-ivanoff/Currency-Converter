@@ -9,6 +9,8 @@ import UIKit
 
 // swiftlint: disable: force_cast
 class ViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var firstEllipse: UIView!
     @IBOutlet weak var converterView: UIView!
     @IBOutlet weak var lastUpdatedDateLabel: UILabel!

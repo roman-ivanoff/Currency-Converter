@@ -49,8 +49,8 @@
                                             <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYi-W7-YAG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
-                                        <rect key="frame" x="16" y="316" width="326" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
+                                        <rect key="frame" x="16" y="336" width="326" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="AC6-nd-vZL"/>
                                         </constraints>
@@ -73,12 +73,21 @@
                                             <segment title="Second"/>
                                         </segments>
                                     </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="310-Sf-EI9">
+                                        <rect key="frame" x="16" y="87" width="326" height="197"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="X5S-38-8pY" secondAttribute="trailing" constant="16" id="0Ex-Ka-ZE1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ke5-lW-Dqz" secondAttribute="bottom" constant="50" id="48W-xk-mkm"/>
+                                    <constraint firstItem="310-Sf-EI9" firstAttribute="top" secondItem="X5S-38-8pY" secondAttribute="bottom" constant="40" id="4lm-tY-bPR"/>
                                     <constraint firstItem="X5S-38-8pY" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="Buo-a7-fCQ"/>
+                                    <constraint firstItem="Ke5-lW-Dqz" firstAttribute="top" secondItem="310-Sf-EI9" secondAttribute="bottom" constant="52" id="Pud-AO-krq"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="SYX-vX-ugv"/>
+                                    <constraint firstAttribute="trailing" secondItem="310-Sf-EI9" secondAttribute="trailing" constant="16" id="aDT-De-yj2"/>
+                                    <constraint firstItem="310-Sf-EI9" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="agx-XH-6y5"/>
                                     <constraint firstAttribute="trailing" secondItem="cuQ-vv-13R" secondAttribute="trailing" id="bpM-rp-ByV"/>
                                     <constraint firstItem="X5S-38-8pY" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="fbj-d8-hMI"/>
                                     <constraint firstAttribute="trailing" secondItem="Ke5-lW-Dqz" secondAttribute="trailing" constant="16" id="n4I-kn-z6Y"/>
@@ -134,7 +143,9 @@
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
+                        <outlet property="segmentedControl" destination="X5S-38-8pY" id="f71-EF-yuR"/>
                         <outlet property="shareButton" destination="cuQ-vv-13R" id="SCM-kK-yRg"/>
+                        <outlet property="tableView" destination="310-Sf-EI9" id="SkC-mh-c9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
