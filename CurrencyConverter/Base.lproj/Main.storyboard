@@ -36,55 +36,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="Nja-qR-mWp">
-                                        <rect key="frame" x="16" y="16" width="326" height="44"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-IF-Jq7">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="44"/>
-                                                <color key="backgroundColor" name="buttonColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="xIZ-Ev-JrH"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Sell">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="sellAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="raf-Gz-MhR"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qP-Be-oRj">
-                                                <rect key="frame" x="199" y="0.0" width="127" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="RS5-pL-1kv"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Buy">
-                                                    <color key="titleColor" name="buttonTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cg7-JE-93W"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-BX-60M" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-BX-60M" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="100" width="326" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="j16-q7-QsK"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-gh-N4p" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-gh-N4p" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="160" width="326" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="J4N-xB-KgX"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-bT-W3H" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-bT-W3H" customClass="CurrencyItem" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="220" width="326" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -104,7 +70,7 @@
                                             <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYi-W7-YAG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
                                         <rect key="frame" x="16" y="316" width="326" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="AC6-nd-vZL"/>
@@ -125,19 +91,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ZC6-gh-N4p" secondAttribute="trailing" constant="16" id="18U-a5-fqF"/>
-                                    <constraint firstItem="Nja-qR-mWp" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="9fa-ez-LTs"/>
                                     <constraint firstItem="ae7-BX-60M" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="DLh-dN-vkx"/>
-                                    <constraint firstAttribute="trailing" secondItem="Nja-qR-mWp" secondAttribute="trailing" constant="16" id="HeG-hh-LTa"/>
                                     <constraint firstItem="Pbm-bT-W3H" firstAttribute="top" secondItem="ZC6-gh-N4p" secondAttribute="bottom" constant="16" id="HwH-21-pY8"/>
                                     <constraint firstAttribute="trailing" secondItem="Pbm-bT-W3H" secondAttribute="trailing" constant="16" id="JKk-S1-3sR"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="SYX-vX-ugv"/>
                                     <constraint firstItem="ZC6-gh-N4p" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="V7s-fQ-2L0"/>
                                     <constraint firstAttribute="trailing" secondItem="cuQ-vv-13R" secondAttribute="trailing" id="bpM-rp-ByV"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="top" secondItem="Pbm-bT-W3H" secondAttribute="bottom" constant="52" id="c4S-dd-dOj"/>
-                                    <constraint firstItem="ae7-BX-60M" firstAttribute="top" secondItem="Nja-qR-mWp" secondAttribute="bottom" constant="40" id="hxn-zP-QGs"/>
                                     <constraint firstAttribute="trailing" secondItem="Ke5-lW-Dqz" secondAttribute="trailing" constant="16" id="n4I-kn-z6Y"/>
                                     <constraint firstItem="Pbm-bT-W3H" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="oeE-nf-hM4"/>
-                                    <constraint firstItem="Nja-qR-mWp" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="ptj-O3-EAG"/>
                                     <constraint firstItem="ZC6-gh-N4p" firstAttribute="top" secondItem="ae7-BX-60M" secondAttribute="bottom" constant="16" id="q22-DK-nbn"/>
                                     <constraint firstAttribute="bottom" secondItem="cuQ-vv-13R" secondAttribute="bottom" id="szz-rO-huO"/>
                                     <constraint firstAttribute="trailing" secondItem="ae7-BX-60M" secondAttribute="trailing" constant="16" id="yyk-VC-ipk"/>
@@ -189,12 +151,10 @@
                     <navigationItem key="navigationItem" id="OVq-i1-xDG"/>
                     <connections>
                         <outlet property="addCurrencyButton" destination="Ke5-lW-Dqz" id="Vfp-m7-Ufh"/>
-                        <outlet property="buyButton" destination="5qP-Be-oRj" id="GAe-qc-7jy"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="eurCurrencyView" destination="Pbm-bT-W3H" id="i0I-UJ-gL9"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
-                        <outlet property="sellButton" destination="FHQ-IF-Jq7" id="NnW-Z4-LSj"/>
                         <outlet property="shareButton" destination="cuQ-vv-13R" id="SCM-kK-yRg"/>
                         <outlet property="uahCurrencyView" destination="ae7-BX-60M" id="H4a-R6-2mA"/>
                         <outlet property="usdCurrencyView" destination="ZC6-gh-N4p" id="7hV-7q-3Jb"/>
@@ -260,9 +220,6 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="buttonColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="buttonTextColor">
-            <color red="0.0" green="0.19215686274509805" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lastUpdatedColor">
             <color red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

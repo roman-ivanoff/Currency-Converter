@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var converterView: UIView!
     @IBOutlet weak var lastUpdatedDateLabel: UILabel!
     @IBOutlet weak var lastUpdatedTextLabel: UILabel!
-    @IBOutlet weak var buyButton: UIButton!
-    @IBOutlet weak var sellButton: UIButton!
     @IBOutlet weak var eurCurrencyView: CurrencyItem!
     @IBOutlet weak var usdCurrencyView: CurrencyItem!
     @IBOutlet weak var uahCurrencyView: CurrencyItem!
@@ -70,28 +68,6 @@ class ViewController: UIViewController {
                 btn.backgroundColor = UIColor.white
                 btn.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
             }
-    }
-
-    @IBAction func sellAction(_ sender: UIButton) {
-        isSell = true
-        isBuy = false
-
-        changeButtonColorToBlue(sellButton)
-        changeButtonColorToWhite(buyButton)
-    }
-
-    @IBAction func buyAction(_ sender: UIButton) {
-        isSell = false
-        isBuy = true
-
-        changeButtonColorToBlue(buyButton)
-        changeButtonColorToWhite(sellButton)
-    }
-
-    @IBAction func shareAction(_ sender: Any) {
-    }
-
-    @IBAction func addCurrencyAction(_ sender: UIButton) {
     }
 
     private func formatDate(date: Date) -> String {
