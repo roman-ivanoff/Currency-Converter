@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addCurrencyButton: UIButton!
 
     let currencyRateModel = CurrencyRateModel()
+    var popularCurrencies: [CurrencyRate] = []
 
     var isSell = true
     var isBuy = false
@@ -57,24 +58,26 @@ class ViewController: UIViewController {
         segmentedControl.setTitleTextAttributes(selectedAttribute, for: .selected)
     }
 
-    private func changeButtonColorToBlue(_ btn: UIButton) {
-        UIView.transition(
-            with: self.view,
-            duration: 0.5,
-            options: .transitionCrossDissolve) {
-                btn.backgroundColor = UIColor(named: "buttonColor")
-                btn.setTitleColor(UIColor.white, for: .normal)
-            }
+    private func getPopularCurrencies() {
+        guard let uah = getCurrecyByName("UAH") else {
+            return
+        }
+
+        guard let usd = getCurrecyByName("USD") else {
+            return
+        }
+
+        guard let eur = getCurrecyByName("EUR") else {
+            return
+        }
+
+        popularCurrencies.append(uah)
+        popularCurrencies.append(usd)
+        popularCurrencies.append(eur)
     }
 
-    private func changeButtonColorToWhite(_ btn: UIButton) {
-        UIView.transition(
-            with: self.view,
-            duration: 0.5,
-            options: .transitionCrossDissolve) {
-                btn.backgroundColor = UIColor.white
-                btn.setTitleColor(UIColor(named: "buttonTextColor"), for: .normal)
-            }
+    private func getCurrecyByName(_ name: String) -> CurrencyRate? {
+        return currencyRateModel.currencyRate!.filter({ $0.currency.rawValue == name }).first
     }
 
     private func formatDate(date: Date) -> String {
@@ -83,7 +86,7 @@ class ViewController: UIViewController {
 
         return formatter.string(from: date)
     }
-    
+
     @IBAction func hangeCurrencyBuySell(_ sender: UISegmentedControl) {
     }
 }
