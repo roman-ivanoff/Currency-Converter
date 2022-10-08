@@ -67,14 +67,21 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X5S-38-8pY">
-                                        <rect key="frame" x="16" y="16" width="326" height="32"/>
+                                        <rect key="frame" x="16" y="16" width="326" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Ye3-BT-DtN"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="First"/>
-                                            <segment title="Second"/>
+                                            <segment title="Buy"/>
                                         </segments>
+                                        <color key="selectedSegmentTintColor" name="buttonColor"/>
+                                        <connections>
+                                            <action selector="hangeCurrencyBuySell:" destination="BYZ-38-t0r" eventType="valueChanged" id="UXW-QP-r7s"/>
+                                        </connections>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="310-Sf-EI9">
-                                        <rect key="frame" x="16" y="87" width="326" height="197"/>
+                                        <rect key="frame" x="16" y="100" width="326" height="184"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>

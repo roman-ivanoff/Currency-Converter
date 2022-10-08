@@ -42,11 +42,19 @@ class ViewController: UIViewController {
         lastUpdatedTextLabel.setLineHeight(lineHeight: 1.46)
         lastUpdatedDateLabel.setLineHeight(lineHeight: 1.46)
 
-        sellButton.layer.cornerRadius = 6
-        buyButton.layer.cornerRadius = 6
+        let segmentControlFont = UIFont(name: "Lato-Regular", size: 18)
+        let segmentControlFont2 = UIFont(name: "Helvetica", size: 18)
+        let normalAttribute: [NSAttributedString.Key: Any] = [
+            .font: segmentControlFont ?? segmentControlFont2,
+            .foregroundColor: UIColor(named: "buttonTextColor")!
+        ]
+        segmentedControl.setTitleTextAttributes(normalAttribute, for: .normal)
 
-        eurCurrencyView.currencyLabel.text = "EUR"
-        usdCurrencyView.currencyLabel.text = "USD"
+        let selectedAttribute: [NSAttributedString.Key: Any] = [
+            .font: segmentControlFont ?? segmentControlFont2,
+            .foregroundColor: UIColor.white
+        ]
+        segmentedControl.setTitleTextAttributes(selectedAttribute, for: .selected)
     }
 
     private func changeButtonColorToBlue(_ btn: UIButton) {
@@ -74,6 +82,9 @@ class ViewController: UIViewController {
         formatter.dateFormat = "dd MMM yyyy h:mm a"
 
         return formatter.string(from: date)
+    }
+    
+    @IBAction func hangeCurrencyBuySell(_ sender: UISegmentedControl) {
     }
 }
 
