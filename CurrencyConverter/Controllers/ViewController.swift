@@ -56,6 +56,7 @@ class ViewController: UIViewController {
             .foregroundColor: UIColor.white
         ]
         segmentedControl.setTitleTextAttributes(selectedAttribute, for: .selected)
+        segmentedControl.removeBorders()
     }
 
     private func getPopularCurrencies() {
