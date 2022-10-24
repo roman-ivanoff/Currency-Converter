@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     var isSell = true
     var isBuy = false
 
+    let cellId = "currencyCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +33,14 @@ class ViewController: UIViewController {
         currencyRateModel.getRates()
         self.lastUpdatedDateLabel.text =  self.formatDate(date: currencyRateModel.lastUpdateDate ?? Date())
 
-        print(currencyRateModel.popularCurrencies)
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        registerCell(for: "CurrencyTableViewCell", id: cellId)
+    }
+
+    private func registerCell(for nibName: String, id: String) {
+        tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: id)
     }
 
     private func setConverterView() {
@@ -98,5 +107,34 @@ extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destController = segue.destination as! CurrencyListViewController
 //        destController.currencyRate = currencyRateModel.sortRates()
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currencyRateModel.popularCurrencies.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        var cell = UITableViewCell()
+
+        if let customCell = tableView.dequeueReusableCell(
+            withIdentifier: cellId,
+            for: indexPath
+        ) as? CurrencyTableViewCell {
+
+            customCell.currencyNameLabel.text = currencyRateModel.popularCurrencies[indexPath.row].currency.rawValue
+
+            cell = customCell
+        }
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }
