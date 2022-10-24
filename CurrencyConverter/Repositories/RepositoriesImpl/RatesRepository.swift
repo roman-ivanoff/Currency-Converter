@@ -33,4 +33,10 @@ class RatesRepository: RatesRepositoryProtocol {
             }
         }
     }
+
+    func sortRates(currencyRate: [CurrencyRate]) -> [CurrencyRate] {
+        return currencyRate.sorted {
+            $0.currency.rawValue < $1.currency.rawValue
+        }
+    }
 }

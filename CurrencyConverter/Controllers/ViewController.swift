@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         setConverterView()
         currencyRateModel.getRates()
         self.lastUpdatedDateLabel.text =  self.formatDate(date: currencyRateModel.lastUpdateDate ?? Date())
+
+        print(currencyRateModel.popularCurrencies)
     }
 
     private func setConverterView() {
@@ -95,6 +97,6 @@ class ViewController: UIViewController {
 extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destController = segue.destination as! CurrencyListViewController
-        destController.currencyRate = currencyRateModel.sortRates()
+//        destController.currencyRate = currencyRateModel.sortRates()
     }
 }
