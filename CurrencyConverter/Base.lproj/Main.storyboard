@@ -36,6 +36,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nA6-h6-dt2">
                                 <rect key="frame" x="16" y="171" width="358" height="430"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kif-8i-Zem">
+                                        <rect key="frame" x="169" y="205" width="20" height="20"/>
+                                    </activityIndicatorView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuQ-vv-13R">
                                         <rect key="frame" x="314" y="386" width="44" height="44"/>
                                         <constraints>
@@ -103,11 +106,13 @@
                                     <constraint firstItem="X5S-38-8pY" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="Buo-a7-fCQ"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="top" secondItem="310-Sf-EI9" secondAttribute="bottom" constant="40" id="Pud-AO-krq"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="SYX-vX-ugv"/>
+                                    <constraint firstItem="kif-8i-Zem" firstAttribute="centerX" secondItem="nA6-h6-dt2" secondAttribute="centerX" id="Wv3-ZD-svP"/>
                                     <constraint firstAttribute="trailing" secondItem="310-Sf-EI9" secondAttribute="trailing" constant="16" id="aDT-De-yj2"/>
                                     <constraint firstItem="310-Sf-EI9" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="agx-XH-6y5"/>
                                     <constraint firstAttribute="trailing" secondItem="cuQ-vv-13R" secondAttribute="trailing" id="bpM-rp-ByV"/>
                                     <constraint firstItem="X5S-38-8pY" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="fbj-d8-hMI"/>
                                     <constraint firstAttribute="trailing" secondItem="Ke5-lW-Dqz" secondAttribute="trailing" constant="16" id="n4I-kn-z6Y"/>
+                                    <constraint firstItem="kif-8i-Zem" firstAttribute="centerY" secondItem="nA6-h6-dt2" secondAttribute="centerY" id="qXC-cu-hF1"/>
                                     <constraint firstAttribute="bottom" secondItem="cuQ-vv-13R" secondAttribute="bottom" id="szz-rO-huO"/>
                                 </constraints>
                             </view>
@@ -156,6 +161,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OVq-i1-xDG"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="kif-8i-Zem" id="i9B-2C-9ko"/>
                         <outlet property="addCurrencyButton" destination="Ke5-lW-Dqz" id="Vfp-m7-Ufh"/>
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>

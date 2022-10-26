@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastUpdatedDateLabel: UILabel!
     @IBOutlet weak var lastUpdatedTextLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addCurrencyButton: UIButton!
 
     let currencyRateModel = CurrencyRateModel()
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
             switch result {
             case .success:
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
                 self.showHiddenView()
             case let .failure(error):
                 let dialogMessage = UIAlertController(
