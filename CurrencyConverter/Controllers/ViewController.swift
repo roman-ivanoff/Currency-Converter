@@ -38,6 +38,9 @@ class ViewController: UIViewController {
 
             switch result {
             case .success:
+                if let selectedCurrency = self.currencyRateModel.selectedCurrency {
+                    self.currencyRateModel.popularCurrencies.append(selectedCurrency)
+                }
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
                 self.showHiddenView()
@@ -118,14 +121,6 @@ class ViewController: UIViewController {
     @IBAction func hangeCurrencyBuySell(_ sender: UISegmentedControl) {
     }
 }
-
-//extension ViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destController = segue.destination as! CurrencyListViewController
-////        destController.currencyRate = currencyRateModel.sortRates()
-//        destController.sections = currencyRateModel.allCurrenciesInSections
-//    }
-//}
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

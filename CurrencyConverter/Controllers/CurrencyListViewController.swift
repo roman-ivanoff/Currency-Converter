@@ -64,5 +64,13 @@ extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+
+        guard let mainVC = storyboard?.instantiateViewController(withIdentifier: "mainVC") as? ViewController else {
+            return
+        }
+
+        mainVC.currencyRateModel.selectedCurrency = sections[indexPath.section].sectionObjects[indexPath.row]
+
+        navigationController?.pushViewController(mainVC, animated: true)
     }
 }

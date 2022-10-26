@@ -11,6 +11,7 @@ class CurrencyRateModel {
     var currencyRate: [CurrencyRate]?
     var popularCurrencies: [CurrencyRate] = []
     var allCurrenciesInSections: [Section] = []
+    var selectedCurrency: CurrencyRate?
     var lastUpdateDate: Date?
     let repository = RatesRepository(
         localDataSource: RatesLocalDataSource(),
