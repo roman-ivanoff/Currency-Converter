@@ -10,9 +10,9 @@ import UIKit
 class CurrencyListViewController: UIViewController {
     let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
-    var currencyRate: [CurrencyRate]!
+//    var currencyRate: [CurrencyRate]!
 
-    var sections = [Section]()
+    var sections: [Section]!
 
     override func viewDidLoad() {
         super.viewDidLoad()

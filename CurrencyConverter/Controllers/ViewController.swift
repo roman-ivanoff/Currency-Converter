@@ -113,6 +113,7 @@ extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destController = segue.destination as! CurrencyListViewController
 //        destController.currencyRate = currencyRateModel.sortRates()
+        destController.sections = currencyRateModel.allCurrenciesInSections
     }
 }
 

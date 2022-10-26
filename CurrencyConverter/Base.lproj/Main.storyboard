@@ -65,7 +65,6 @@
                                             <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="small"/>
                                         </state>
                                         <connections>
-                                            <action selector="addCurrencyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmx-bb-SgD"/>
                                             <segue destination="3bk-Ou-hNG" kind="showDetail" id="8dP-s3-2B4"/>
                                         </connections>
                                     </button>
