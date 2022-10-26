@@ -39,8 +39,18 @@ class CurrencyRateModel {
     }
 
     func getPopularCurrencies(currencies: [CurrencyRate]) -> [CurrencyRate] {
-        let popularRates = ["UAH", "USD", "EUR"]
-        return currencies.filter { popularRates.contains($0.currency.rawValue) }
+        var rates: [CurrencyRate] = []
+        if let uah = getCurrecyByName(name: "UAH", currencies: currencies) {
+            rates.append(uah)
+        }
+        if let uah = getCurrecyByName(name: "USD", currencies: currencies) {
+            rates.append(uah)
+        }
+        if let uah = getCurrecyByName(name: "EUR", currencies: currencies) {
+            rates.append(uah)
+        }
+
+        return rates
     }
 
     func getAllRatesSections(popularCurrencies: [CurrencyRate], currencies: [CurrencyRate]) -> [Section] {
