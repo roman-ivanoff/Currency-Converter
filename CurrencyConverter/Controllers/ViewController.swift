@@ -30,7 +30,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         setConverterView()
-        currencyRateModel.getRates()
+        currencyRateModel.getRates { [weak self] result in
+            guard let self = self else {
+                return
+            }
+
+            switch result {
+            case .success:
+                self.tableView.reloadData()
+                self.showHiddenView()
+            case let .failure(error):
+                let dialogMessage = UIAlertController(
+                    title: "Error",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                let okAction = UIAlertAction(title: "OK", style: .cancel)
+                dialogMessage.addAction(okAction)
+                self.present(dialogMessage, animated: true)
+            }
+        }
         self.lastUpdatedDateLabel.text =  self.formatDate(date: currencyRateModel.lastUpdateDate ?? Date())
 
         tableView.delegate = self
@@ -70,26 +89,11 @@ class ViewController: UIViewController {
         segmentedControl.removeBorders()
     }
 
-    private func getPopularCurrencies() {
-        guard let uah = getCurrecyByName("UAH") else {
-            return
-        }
-
-        guard let usd = getCurrecyByName("USD") else {
-            return
-        }
-
-        guard let eur = getCurrecyByName("EUR") else {
-            return
-        }
-
-        popularCurrencies.append(uah)
-        popularCurrencies.append(usd)
-        popularCurrencies.append(eur)
-    }
-
-    private func getCurrecyByName(_ name: String) -> CurrencyRate? {
-        return currencyRateModel.currencyRate!.filter({ $0.currency.rawValue == name }).first
+    private func showHiddenView() {
+        segmentedControl.isHidden = false
+        tableView.isHidden = false
+        shareButton.isHidden = false
+        addCurrencyButton.isHidden = false
     }
 
     private func formatDate(date: Date) -> String {
