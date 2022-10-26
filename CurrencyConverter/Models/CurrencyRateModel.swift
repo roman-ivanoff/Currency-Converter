@@ -24,8 +24,7 @@ class CurrencyRateModel {
 
             switch result {
             case let .success(rates):
-//                self.currencyRate = rates.wrappedValue
-                self.getPopularCurrencies(currencies: rates.wrappedValue)
+                self.popularCurrencies = self.getPopularCurrencies(currencies: rates.wrappedValue)
                 self.lastUpdateDate = rates.createdAt
             case let .failure(error):
                 // TODO: handle error
@@ -34,22 +33,9 @@ class CurrencyRateModel {
         }
     }
 
-    func getPopularCurrencies(currencies: [CurrencyRate]) {
-        guard let uah = getCurrecyByName(name: "UAH", currencies: currencies) else {
-            return
-        }
-
-        guard let usd = getCurrecyByName(name: "USD", currencies: currencies) else {
-            return
-        }
-
-        guard let eur = getCurrecyByName(name: "EUR", currencies: currencies) else {
-            return
-        }
-
-        popularCurrencies.append(uah)
-        popularCurrencies.append(usd)
-        popularCurrencies.append(eur)
+    func getPopularCurrencies(currencies: [CurrencyRate]) -> [CurrencyRate] {
+        let popularRates = ["UAH", "USD", "EUR"]
+        return currencies.filter { popularRates.contains($0.currency.rawValue) }
     }
 
     private func getCurrecyByName(name: String, currencies: [CurrencyRate]) -> CurrencyRate? {
