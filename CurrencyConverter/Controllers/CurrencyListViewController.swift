@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct Section {
-    var sectionName: String
-    var sectionObjects: [CurrencyRate]
-}
-
 class CurrencyListViewController: UIViewController {
     let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
@@ -25,13 +20,6 @@ class CurrencyListViewController: UIViewController {
         registerCell(for: tableView, id: cellId)
         tableView.dataSource = self
         tableView.delegate = self
-
-        let groupedDictionary = Dictionary(grouping: currencyRate, by: { $0.currency.rawValue.prefix(1) })
-        let sortedRates = groupedDictionary.sorted { $0.0 < $1.0 }
-
-        for (key, value) in sortedRates {
-            sections.append(Section(sectionName: String(key), sectionObjects: value))
-        }
     }
 
     private func registerCell(for tableView: UITableView, id: String) {
