@@ -16,7 +16,7 @@ class CurrencyRateModel {
         remoteDataSource: RatesRemoteDataSource()
     )
 
-    func getRates() {
+    func getRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
         repository.fetchRates { [weak self] result in
             guard let self = self else {
                 return
@@ -26,9 +26,9 @@ class CurrencyRateModel {
             case let .success(rates):
                 self.popularCurrencies = self.getPopularCurrencies(currencies: rates.wrappedValue)
                 self.lastUpdateDate = rates.createdAt
+                completion(.success(rates))
             case let .failure(error):
-                // TODO: handle error
-                print(error)
+                completion(.failure(error))
             }
         }
     }
