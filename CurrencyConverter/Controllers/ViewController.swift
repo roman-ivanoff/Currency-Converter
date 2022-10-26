@@ -105,17 +105,27 @@ class ViewController: UIViewController {
         return formatter.string(from: date)
     }
 
+    @IBAction func addCurrencyAction(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(identifier: "currencyList", creator: { coder in
+            return CurrencyListViewController(coder: coder, sections: self.currencyRateModel.allCurrenciesInSections)
+        }) else {
+            fatalError("Failed to load CurrencyListViewController from storyboard.")
+        }
+
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func hangeCurrencyBuySell(_ sender: UISegmentedControl) {
     }
 }
 
-extension ViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destController = segue.destination as! CurrencyListViewController
-//        destController.currencyRate = currencyRateModel.sortRates()
-        destController.sections = currencyRateModel.allCurrenciesInSections
-    }
-}
+//extension ViewController {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destController = segue.destination as! CurrencyListViewController
+////        destController.currencyRate = currencyRateModel.sortRates()
+//        destController.sections = currencyRateModel.allCurrenciesInSections
+//    }
+//}
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

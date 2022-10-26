@@ -65,7 +65,7 @@
                                             <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="small"/>
                                         </state>
                                         <connections>
-                                            <segue destination="3bk-Ou-hNG" kind="showDetail" id="8dP-s3-2B4"/>
+                                            <action selector="addCurrencyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtK-8h-BDC"/>
                                         </connections>
                                     </button>
                                     <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X5S-38-8pY">
@@ -168,6 +168,7 @@
                         <outlet property="segmentedControl" destination="X5S-38-8pY" id="f71-EF-yuR"/>
                         <outlet property="shareButton" destination="cuQ-vv-13R" id="SCM-kK-yRg"/>
                         <outlet property="tableView" destination="310-Sf-EI9" id="SkC-mh-c9d"/>
+                        <segue destination="3bk-Ou-hNG" kind="showDetail" id="CMU-GL-Tij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,7 +178,7 @@
         <!--Currency List View Controller-->
         <scene sceneID="JnJ-Fc-eIb">
             <objects>
-                <viewController id="3bk-Ou-hNG" customClass="CurrencyListViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="currencyList" id="3bk-Ou-hNG" customClass="CurrencyListViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3GQ-91-6nQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

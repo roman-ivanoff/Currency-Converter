@@ -12,7 +12,16 @@ class CurrencyListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 //    var currencyRate: [CurrencyRate]!
 
-    var sections: [Section]!
+    var sections: [Section]
+
+    init?(coder: NSCoder, sections: [Section]) {
+        self.sections = sections
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("You must create this view controller with sections.")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
