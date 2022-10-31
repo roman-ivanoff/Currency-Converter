@@ -71,7 +71,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addRate(_ notification: NSNotification) {
-        print("notification-------: \(notification.userInfo?["rate"])")
+        currencyRateModel.popularCurrencies.append(notification.userInfo?["rate"] as! CurrencyRate)
+        tableView.reloadData()
     }
 
     private func registerCell(for nibName: String, id: String) {
