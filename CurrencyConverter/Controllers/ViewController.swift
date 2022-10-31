@@ -30,6 +30,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(addRate(_:)),
+            name: Notification.Name(rawValue: "addRate"),
+            object: nil
+        )
+
         setConverterView()
         currencyRateModel.getRates { [weak self] result in
             guard let self = self else {
@@ -61,6 +68,10 @@ class ViewController: UIViewController {
         tableView.dataSource = self
 
         registerCell(for: "CurrencyTableViewCell", id: cellId)
+    }
+
+    @IBAction func addRate(_ notification: NSNotification) {
+        print("notification-------: \(notification.userInfo?["rate"])")
     }
 
     private func registerCell(for nibName: String, id: String) {

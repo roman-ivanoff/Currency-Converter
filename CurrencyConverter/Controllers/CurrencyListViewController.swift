@@ -65,12 +65,11 @@ extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        guard let mainVC = storyboard?.instantiateViewController(withIdentifier: "mainVC") as? ViewController else {
-            return
-        }
+        let rateDict = ["rate": sections[indexPath.section].sectionObjects[indexPath.row]]
 
-        mainVC.currencyRateModel.selectedCurrency = sections[indexPath.section].sectionObjects[indexPath.row]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addRate"), object: nil, userInfo: rateDict)
 
-        navigationController?.pushViewController(mainVC, animated: true)
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
     }
 }
