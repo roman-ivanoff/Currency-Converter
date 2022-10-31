@@ -18,7 +18,10 @@ class CurrencyRateModel {
         remoteDataSource: RatesRemoteDataSource()
     )
 
-    func getRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
+    func getRates(
+        onSuccess: @escaping (Timestamped<[CurrencyRate]>) -> Void,
+        onError: @escaping(Error) -> Void
+    ) {
         repository.fetchRates { [weak self] result in
             guard let self = self else {
                 return
@@ -32,12 +35,33 @@ class CurrencyRateModel {
                     popularCurrencies: self.popularCurrencies,
                     currencies: rates.wrappedValue
                 )
-                completion(.success(rates))
+                onSuccess(rates)
             case let .failure(error):
-                completion(.failure(error))
+                onError(error)
             }
         }
     }
+
+//    func getRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
+//        repository.fetchRates { [weak self] result in
+//            guard let self = self else {
+//                return
+//            }
+//
+//            switch result {
+//            case let .success(rates):
+//                self.popularCurrencies = self.getPopularCurrencies(currencies: rates.wrappedValue)
+//                self.lastUpdateDate = rates.createdAt
+//                self.allCurrenciesInSections = self.getAllRatesSections(
+//                    popularCurrencies: self.popularCurrencies,
+//                    currencies: rates.wrappedValue
+//                )
+//                completion(.success(rates))
+//            case let .failure(error):
+//                completion(.failure(error))
+//            }
+//        }
+//    }
 
     func getPopularCurrencies(currencies: [CurrencyRate]) -> [CurrencyRate] {
         var rates: [CurrencyRate] = []

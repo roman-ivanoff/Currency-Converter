@@ -38,30 +38,49 @@ class ViewController: UIViewController {
         )
 
         setConverterView()
-        currencyRateModel.getRates { [weak self] result in
+
+        currencyRateModel.getRates { [weak self] _ in
             guard let self = self else {
                 return
             }
-
-            switch result {
-            case .success:
-                if let selectedCurrency = self.currencyRateModel.selectedCurrency {
-                    self.currencyRateModel.popularCurrencies.append(selectedCurrency)
-                }
-                self.tableView.reloadData()
-                self.activityIndicator.stopAnimating()
-                self.showHiddenView()
-            case let .failure(error):
-                let dialogMessage = UIAlertController(
-                    title: "Error",
-                    message: error.localizedDescription,
-                    preferredStyle: .alert
-                )
-                let okAction = UIAlertAction(title: "OK", style: .cancel)
-                dialogMessage.addAction(okAction)
-                self.present(dialogMessage, animated: true)
-            }
+            self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.showHiddenView()
+        } onError: { error in
+            let dialogMessage = UIAlertController(
+                title: "Error",
+                message: error.localizedDescription,
+                preferredStyle: .alert
+            )
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+            dialogMessage.addAction(okAction)
+            self.present(dialogMessage, animated: true)
         }
+
+//        currencyRateModel.getRates { [weak self] result in
+//            guard let self = self else {
+//                return
+//            }
+//
+//            switch result {
+//            case .success:
+//                if let selectedCurrency = self.currencyRateModel.selectedCurrency {
+//                    self.currencyRateModel.popularCurrencies.append(selectedCurrency)
+//                }
+//                self.tableView.reloadData()
+//                self.activityIndicator.stopAnimating()
+//                self.showHiddenView()
+//            case let .failure(error):
+//                let dialogMessage = UIAlertController(
+//                    title: "Error",
+//                    message: error.localizedDescription,
+//                    preferredStyle: .alert
+//                )
+//                let okAction = UIAlertAction(title: "OK", style: .cancel)
+//                dialogMessage.addAction(okAction)
+//                self.present(dialogMessage, animated: true)
+//            }
+//        }
         self.lastUpdatedDateLabel.text =  self.formatDate(date: currencyRateModel.lastUpdateDate ?? Date())
 
         tableView.delegate = self
