@@ -116,13 +116,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
-                                <rect key="frame" x="16" y="617" width="358" height="14.666666666666629"/>
+                                <rect key="frame" x="16" y="617" width="358" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 May 2021 7:03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-gb-Ksl">
-                                <rect key="frame" x="16" y="635.66666666666663" width="358" height="14.666666666666629"/>
+                                <rect key="frame" x="16" y="635" width="358" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
@@ -183,8 +183,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Currency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4y-Cx-cre">
+                                <rect key="frame" x="16" y="63" width="358" height="34"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-bQ-I3v">
-                                <rect key="frame" x="0.0" y="47" width="390" height="740"/>
+                                <rect key="frame" x="0.0" y="121" width="390" height="666"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
@@ -192,9 +197,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="trailing" secondItem="V5A-bQ-I3v" secondAttribute="trailing" id="PVJ-QO-ekw"/>
-                            <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="L9H-4E-IwV" secondAttribute="top" id="VgK-iP-hc4"/>
+                            <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="F4y-Cx-cre" secondAttribute="bottom" constant="24" id="VgK-iP-hc4"/>
+                            <constraint firstItem="F4y-Cx-cre" firstAttribute="leading" secondItem="L9H-4E-IwV" secondAttribute="leading" constant="16" id="a4e-jt-aKH"/>
                             <constraint firstItem="V5A-bQ-I3v" firstAttribute="leading" secondItem="L9H-4E-IwV" secondAttribute="leading" id="ebC-7w-UhB"/>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="bottom" secondItem="V5A-bQ-I3v" secondAttribute="bottom" id="gUA-Tt-8G3"/>
+                            <constraint firstItem="L9H-4E-IwV" firstAttribute="trailing" secondItem="F4y-Cx-cre" secondAttribute="trailing" constant="16" id="jd1-Tz-AEw"/>
+                            <constraint firstItem="F4y-Cx-cre" firstAttribute="top" secondItem="L9H-4E-IwV" secondAttribute="top" constant="16" id="uHM-J6-Klo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cxX-8x-Jli"/>
