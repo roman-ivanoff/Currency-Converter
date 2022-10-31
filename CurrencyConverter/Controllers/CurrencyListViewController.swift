@@ -10,7 +10,7 @@ import UIKit
 class CurrencyListViewController: UIViewController {
     let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
-//    var currencyRate: [CurrencyRate]!
+    @IBOutlet weak var searchCurrencyTextField: DesignableUITextField!
 
     var sections: [Section]
 
