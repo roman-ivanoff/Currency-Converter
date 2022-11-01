@@ -10,7 +10,6 @@ import UIKit
 class CurrencyListViewController: UIViewController {
     let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchCurrencyTextField: DesignableUITextField!
 
     var sections: [Section]
     var delegate: CurrencySendingDelegate?
@@ -42,7 +41,6 @@ class CurrencyListViewController: UIViewController {
 
 extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return currencyRate?.count ?? 0
         return sections[section].sectionObjects.count
     }
 

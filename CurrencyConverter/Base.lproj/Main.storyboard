@@ -183,22 +183,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Currency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4y-Cx-cre" customClass="DesignableUITextField" customModule="CurrencyConverter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="63" width="358" height="34"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="magnifyingglass" catalog="system"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" systemColor="placeholderTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-bQ-I3v">
-                                <rect key="frame" x="0.0" y="113" width="390" height="674"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="740"/>
                                 <color key="backgroundColor" name="tableBacgroundColor"/>
                             </tableView>
                         </subviews>
@@ -206,17 +192,13 @@
                         <color key="backgroundColor" name="tableBacgroundColor"/>
                         <constraints>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="trailing" secondItem="V5A-bQ-I3v" secondAttribute="trailing" id="PVJ-QO-ekw"/>
-                            <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="F4y-Cx-cre" secondAttribute="bottom" constant="16" id="VgK-iP-hc4"/>
-                            <constraint firstItem="F4y-Cx-cre" firstAttribute="leading" secondItem="L9H-4E-IwV" secondAttribute="leading" constant="16" id="a4e-jt-aKH"/>
+                            <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="L9H-4E-IwV" secondAttribute="top" id="Paa-A1-cnT"/>
                             <constraint firstItem="V5A-bQ-I3v" firstAttribute="leading" secondItem="L9H-4E-IwV" secondAttribute="leading" id="ebC-7w-UhB"/>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="bottom" secondItem="V5A-bQ-I3v" secondAttribute="bottom" id="gUA-Tt-8G3"/>
-                            <constraint firstItem="L9H-4E-IwV" firstAttribute="trailing" secondItem="F4y-Cx-cre" secondAttribute="trailing" constant="16" id="jd1-Tz-AEw"/>
-                            <constraint firstItem="F4y-Cx-cre" firstAttribute="top" secondItem="L9H-4E-IwV" secondAttribute="top" constant="16" id="uHM-J6-Klo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cxX-8x-Jli"/>
                     <connections>
-                        <outlet property="searchCurrencyTextField" destination="F4y-Cx-cre" id="6ar-r5-jX3"/>
                         <outlet property="tableView" destination="V5A-bQ-I3v" id="lFe-gD-zrR"/>
                     </connections>
                 </viewController>
@@ -243,14 +225,8 @@
             <point key="canvasLocation" x="50.769230769230766" y="3.5545023696682461"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="F4y-Cx-cre">
-            <size key="intrinsicContentSize" width="180" height="34"/>
-        </designable>
-    </designables>
     <resources>
         <image name="header" width="812" height="274"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="buttonColor">
@@ -262,9 +238,6 @@
         <namedColor name="tableBacgroundColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
