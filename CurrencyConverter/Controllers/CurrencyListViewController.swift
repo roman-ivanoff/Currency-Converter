@@ -13,9 +13,11 @@ class CurrencyListViewController: UIViewController {
     @IBOutlet weak var searchCurrencyTextField: DesignableUITextField!
 
     var sections: [Section]
+    var delegate: CurrencySendingDelegate?
 
-    init?(coder: NSCoder, sections: [Section]) {
+    init?(coder: NSCoder, sections: [Section], delegate: CurrencySendingDelegate) {
         self.sections = sections
+        self.delegate = delegate
         super.init(coder: coder)
     }
 
@@ -67,11 +69,10 @@ extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        let rateDict = ["rate": sections[indexPath.section].sectionObjects[indexPath.row]]
+        delegate?.sendCurrency(currency: sections[indexPath.section].sectionObjects[indexPath.row])
 
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addRate"), object: nil, userInfo: rateDict)
-
-        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
+        dismiss(animated: true) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 }

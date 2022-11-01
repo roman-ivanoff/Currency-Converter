@@ -30,13 +30,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(addRate(_:)),
-            name: Notification.Name(rawValue: "addRate"),
-            object: nil
-        )
-
         setConverterView()
 
         currencyRateModel.getRates { [weak self] _ in
@@ -89,11 +82,6 @@ class ViewController: UIViewController {
         registerCell(for: "CurrencyTableViewCell", id: cellId)
     }
 
-    @IBAction func addRate(_ notification: NSNotification) {
-        currencyRateModel.popularCurrencies.append(notification.userInfo?["rate"] as! CurrencyRate)
-        tableView.reloadData()
-    }
-
     private func registerCell(for nibName: String, id: String) {
         tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: id)
     }
@@ -140,16 +128,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addCurrencyAction(_ sender: UIButton) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "currencyList", creator: { coder in
-            return CurrencyListViewController(coder: coder, sections: self.currencyRateModel.allCurrenciesInSections)
+        guard let viewController = storyboard?.instantiateViewController(identifier: "currencyList", creator: { coder in
+            return CurrencyListViewController(
+                coder: coder,
+                sections: self.currencyRateModel.allCurrenciesInSections,
+                delegate: self
+            )
         }) else {
             fatalError("Failed to load CurrencyListViewController from storyboard.")
         }
 
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
     @IBAction func hangeCurrencyBuySell(_ sender: UISegmentedControl) {
+    }
+}
+
+extension ViewController: CurrencySendingDelegate {
+    func sendCurrency(currency: CurrencyRate) {
+        currencyRateModel.popularCurrencies.append(currency)
+        tableView.reloadData()
     }
 }
 
