@@ -198,15 +198,15 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-bQ-I3v">
-                                <rect key="frame" x="0.0" y="121" width="390" height="666"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="113" width="390" height="674"/>
+                                <color key="backgroundColor" name="tableBacgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L9H-4E-IwV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="tableBacgroundColor"/>
                         <constraints>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="trailing" secondItem="V5A-bQ-I3v" secondAttribute="trailing" id="PVJ-QO-ekw"/>
-                            <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="F4y-Cx-cre" secondAttribute="bottom" constant="24" id="VgK-iP-hc4"/>
+                            <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="F4y-Cx-cre" secondAttribute="bottom" constant="16" id="VgK-iP-hc4"/>
                             <constraint firstItem="F4y-Cx-cre" firstAttribute="leading" secondItem="L9H-4E-IwV" secondAttribute="leading" constant="16" id="a4e-jt-aKH"/>
                             <constraint firstItem="V5A-bQ-I3v" firstAttribute="leading" secondItem="L9H-4E-IwV" secondAttribute="leading" id="ebC-7w-UhB"/>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="bottom" secondItem="V5A-bQ-I3v" secondAttribute="bottom" id="gUA-Tt-8G3"/>
@@ -243,6 +243,11 @@
             <point key="canvasLocation" x="50.769230769230766" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="F4y-Cx-cre">
+            <size key="intrinsicContentSize" width="180" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="header" width="812" height="274"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
@@ -253,6 +258,9 @@
         </namedColor>
         <namedColor name="lastUpdatedColor">
             <color red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tableBacgroundColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>

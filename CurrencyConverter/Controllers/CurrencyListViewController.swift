@@ -26,6 +26,8 @@ class CurrencyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.contentInset.top = 8
+
         registerCell(for: tableView, id: cellId)
         tableView.dataSource = self
         tableView.delegate = self
