@@ -42,6 +42,9 @@ class CurrencyListViewController: UIViewController {
         registerCell(for: tableView, id: cellId)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.keyboardDismissMode = .onDrag
+
+        addKeyboardHideOnTappedAroundRecognizer()
 
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
@@ -53,6 +56,17 @@ class CurrencyListViewController: UIViewController {
 
     private func registerCell(for tableView: UITableView, id: String) {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+    }
+}
+
+extension CurrencyListViewController {
+    func addKeyboardHideOnTappedAroundRecognizer(cancelsTouchesInView: Bool = true) {
+        let endingTapRecognizer = UITapGestureRecognizer(
+            target: view,
+            action: #selector(UIView.endEditing)
+        )
+        endingTapRecognizer.cancelsTouchesInView = cancelsTouchesInView
+        view.addGestureRecognizer(endingTapRecognizer)
     }
 }
 
