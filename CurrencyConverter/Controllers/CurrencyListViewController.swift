@@ -10,8 +10,18 @@ import UIKit
 class CurrencyListViewController: UIViewController {
     let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
+    var searchController: UISearchController!
+
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
 
     var sections: [Section]
+    var filteredSections: [Section] = [Section]()
     var delegate: CurrencySendingDelegate?
 
     init?(coder: NSCoder, sections: [Section], delegate: CurrencySendingDelegate) {
@@ -32,6 +42,13 @@ class CurrencyListViewController: UIViewController {
         registerCell(for: tableView, id: cellId)
         tableView.dataSource = self
         tableView.delegate = self
+
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Currency"
+        definesPresentationContext = true
     }
 
     private func registerCell(for tableView: UITableView, id: String) {
@@ -39,27 +56,60 @@ class CurrencyListViewController: UIViewController {
     }
 }
 
+extension CurrencyListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+
+    func filterContentForSearchText(_ searchText: String) {
+        var currencyArray: [CurrencyRate] = []
+        filteredSections.removeAll()
+
+        for section in sections {
+            currencyArray = section.sectionObjects.filter {
+                $0.currency.rawValue.lowercased().contains(searchText.lowercased())
+            }
+
+            if !currencyArray.isEmpty {
+                filteredSections.append(Section(sectionName: section.sectionName, sectionObjects: currencyArray))
+            }
+        }
+
+        tableView.reloadData()
+    }
+
+}
+
 extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].sectionObjects.count
+        return isFiltering ?
+        filteredSections[section].sectionObjects.count :
+        sections[section].sectionObjects.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = sections[indexPath.section]
-            .sectionObjects[indexPath.row]
-            .currency
-            .rawValue
+        let currency: CurrencyRate
+        if isFiltering {
+            currency = filteredSections[indexPath.section]
+                .sectionObjects[indexPath.row]
+        } else {
+            currency = sections[indexPath.section]
+                .sectionObjects[indexPath.row]
+        }
+
+        cell.textLabel?.text = currency.currency.rawValue
 
         return cell
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return isFiltering ? filteredSections.count : sections.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].sectionName
+        return isFiltering ? filteredSections[section].sectionName : sections[section].sectionName
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -67,7 +117,15 @@ extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        delegate?.sendCurrency(currency: sections[indexPath.section].sectionObjects[indexPath.row])
+        let currency: CurrencyRate
+
+        if isFiltering {
+            currency = filteredSections[indexPath.section].sectionObjects[indexPath.row]
+        } else {
+            currency = sections[indexPath.section].sectionObjects[indexPath.row]
+        }
+
+        delegate?.sendCurrency(currency: currency)
 
         dismiss(animated: true) {
             self.navigationController?.popToRootViewController(animated: true)
