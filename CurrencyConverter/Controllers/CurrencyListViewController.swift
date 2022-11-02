@@ -46,16 +46,25 @@ class CurrencyListViewController: UIViewController {
 
         addKeyboardHideOnTappedAroundRecognizer()
 
+        setupSearchController()
+    }
+
+    private func registerCell(for tableView: UITableView, id: String) {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
+    }
+
+    private func setupSearchController() {
+//        if #available(iOS 15.0, *) {
+//            tableView.sectionHeaderTopPadding = 16
+//        }
+
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Currency"
+        searchController.searchBar.barTintColor = UIColor(named: "tableBacgroundColor")
         definesPresentationContext = true
-    }
-
-    private func registerCell(for tableView: UITableView, id: String) {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: id)
     }
 }
 
