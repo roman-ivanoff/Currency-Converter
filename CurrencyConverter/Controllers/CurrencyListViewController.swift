@@ -53,12 +53,13 @@ class CurrencyListViewController: UIViewController {
     }
 
     private func setupSearchController() {
-//        if #available(iOS 15.0, *) {
-//            tableView.sectionHeaderTopPadding = 16
-//        }
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 16
+        } else {
+            tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        }
 
         searchController = UISearchController(searchResultsController: nil)
-//        tableView.tableHeaderView = searchController.searchBar
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -85,6 +86,10 @@ extension CurrencyListViewController: UISearchResultsUpdating {
         filteredSections.removeAll()
 
         for section in sections {
+            if section.sectionName == "Popular" {
+                continue
+            }
+            
             currencyArray = section.sectionObjects.filter {
                 $0.currency.rawValue.lowercased().contains(searchText.lowercased())
             }
