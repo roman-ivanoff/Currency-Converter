@@ -43,6 +43,7 @@ class CurrencyListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.keyboardDismissMode = .onDrag
+        navigationController?.title = "Currency"
 
         setupSearchController()
     }
