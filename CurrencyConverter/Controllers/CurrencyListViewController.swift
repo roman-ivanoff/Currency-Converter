@@ -44,8 +44,6 @@ class CurrencyListViewController: UIViewController {
         tableView.delegate = self
         tableView.keyboardDismissMode = .onDrag
 
-        addKeyboardHideOnTappedAroundRecognizer()
-
         setupSearchController()
     }
 
@@ -64,16 +62,13 @@ class CurrencyListViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Currency"
         searchController.searchBar.barTintColor = UIColor(named: "tableBacgroundColor")
-        definesPresentationContext = true
-    }
-
-    func addKeyboardHideOnTappedAroundRecognizer(cancelsTouchesInView: Bool = true) {
-        let endingTapRecognizer = UITapGestureRecognizer(
-            target: view,
-            action: #selector(UIView.endEditing)
+        searchController.searchBar.directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: 16,
+            bottom: 0,
+            trailing: 16
         )
-        endingTapRecognizer.cancelsTouchesInView = cancelsTouchesInView
-        view.addGestureRecognizer(endingTapRecognizer)
+        definesPresentationContext = true
     }
 }
 
