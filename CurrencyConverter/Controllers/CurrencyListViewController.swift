@@ -13,11 +13,11 @@ class CurrencyListViewController: UIViewController {
     var searchController: UISearchController!
 
     var isSearchBarEmpty: Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
+        searchController.searchBar.text?.isEmpty ?? true
     }
 
     var isFiltering: Bool {
-        return searchController.isActive && !isSearchBarEmpty
+        searchController.isActive && !isSearchBarEmpty
     }
 
     var sections: [Section]
