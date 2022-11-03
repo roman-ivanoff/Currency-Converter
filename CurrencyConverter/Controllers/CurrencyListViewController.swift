@@ -71,6 +71,7 @@ class CurrencyListViewController: UIViewController {
             bottom: 0,
             trailing: 16
         )
+        navigationController?.navigationBar.setShadowHidden(true)
         definesPresentationContext = true
     }
 }
