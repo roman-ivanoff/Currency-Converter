@@ -66,9 +66,7 @@ class CurrencyListViewController: UIViewController {
         searchController.searchBar.barTintColor = UIColor(named: "tableBacgroundColor")
         definesPresentationContext = true
     }
-}
 
-extension CurrencyListViewController {
     func addKeyboardHideOnTappedAroundRecognizer(cancelsTouchesInView: Bool = true) {
         let endingTapRecognizer = UITapGestureRecognizer(
             target: view,
