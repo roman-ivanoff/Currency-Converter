@@ -127,6 +127,11 @@ class ViewController: UIViewController {
         return formatter.string(from: date)
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
     @IBAction func addCurrencyAction(_ sender: UIButton) {
         guard let viewController = storyboard?.instantiateViewController(identifier: "currencyList", creator: { coder in
             return CurrencyListViewController(
@@ -165,6 +170,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: cellId,
             for: indexPath
         ) as? CurrencyTableViewCell {
+            customCell.currencyTextField.keyboardType = .decimalPad
 
             customCell.currencyNameLabel.text = currencyRateModel.popularCurrencies[indexPath.row].currency.rawValue
 
