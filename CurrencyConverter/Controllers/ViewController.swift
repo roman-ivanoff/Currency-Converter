@@ -174,7 +174,7 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    @IBAction func hangeCurrencyBuySell(_ sender: UISegmentedControl) {
+    @IBAction func changeCurrencyBuySell(_ sender: UISegmentedControl) {
     }
 }
 
@@ -198,7 +198,37 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: cellId,
             for: indexPath
         ) as? CurrencyTableViewCell {
+            customCell.currencyTextField.tag = indexPath.row
             customCell.currencyTextField.keyboardType = .decimalPad
+            customCell.currencyTextField.addTarget(
+                self,
+                action: #selector(textFieldDidChange(_:)),
+                for: .editingChanged
+            )
+
+            switch convertState {
+            case .withoutConvert:
+                customCell.currencyTextField.text = ""
+            case .uahToOtherCurrencies:
+                if indexPath.row == 0 {
+                    customCell.currencyTextField.text = String(currencyRateModel.amount)
+                } else {
+                    let res = Decimal(currencyRateModel.amount) /
+                    currencyRateModel.popularCurrencies[indexPath.row].sale
+
+                    customCell.currencyTextField.text = String(format: "%.2f", Double(truncating: res as NSNumber))
+                }
+            case .chosenCurrencyToUah(let rowNumber):
+                if indexPath.row == 0 {
+                    let res = Decimal(currencyRateModel.amount) * currencyRateModel.popularCurrencies[rowNumber].sale
+                    customCell.currencyTextField.text = String(format: "%.2f", Double(truncating: res as NSNumber))
+
+                } else if indexPath.row == rowNumber {
+                    customCell.currencyTextField.text = String(currencyRateModel.amount)
+                } else {
+                    customCell.currencyTextField.text = ""
+                }
+            }
 
             customCell.currencyNameLabel.text = currencyRateModel.popularCurrencies[indexPath.row].currency.rawValue
 
