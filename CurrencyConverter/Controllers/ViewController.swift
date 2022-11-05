@@ -170,6 +170,14 @@ class ViewController: UIViewController {
         }
     }
 
+    private func uahToOtherCurrency(_ amount: Double, _ sellBuyRate: Decimal) -> Decimal {
+        return Decimal(amount) / sellBuyRate
+    }
+
+    private func currencyToUah(_ amount: Double, _ sellBuyRate: Decimal) -> Decimal {
+        return Decimal(amount) * sellBuyRate
+    }
+
     @IBAction func addCurrencyAction(_ sender: UIButton) {
         guard let viewController = storyboard?.instantiateViewController(identifier: "currencyList", creator: { coder in
             return CurrencyListViewController(
