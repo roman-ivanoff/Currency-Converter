@@ -17,6 +17,7 @@ class CurrencyRateModel {
         localDataSource: RatesLocalDataSource(),
         remoteDataSource: RatesRemoteDataSource()
     )
+    var amount: Double = 0
 
     func getRates(
         onSuccess: @escaping (Timestamped<[CurrencyRate]>) -> Void,

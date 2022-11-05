@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum ConvertState {
+    case withoutConvert
+    case uahToOtherCurrencies
+    case chosenCurrencyToUah(rowNumber: Int)
+}
+
 // swiftlint: disable: force_cast
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -21,9 +27,8 @@ class ViewController: UIViewController {
 
     let currencyRateModel = CurrencyRateModel()
     var popularCurrencies: [CurrencyRate] = []
-
-    var isSell = true
-    var isBuy = false
+    var selectedCurrencies: [CurrencyRate] = []
+    private var convertState: ConvertState = .withoutConvert
 
     let cellId = "currencyCell"
 
@@ -130,6 +135,29 @@ class ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        let indexPath = IndexPath(row: textField.tag, section: 0)
+
+        if indexPath.row == 0 {
+            convertState = .uahToOtherCurrencies
+            currencyRateModel.amount = Double(textField.text!) ?? 0
+            tableView.reloadRows(
+                at: (1..<currencyRateModel.popularCurrencies.count)
+                    .map { IndexPath(row: $0, section: 0) },
+                with: .none
+            )
+        } else {
+            convertState = .chosenCurrencyToUah(rowNumber: indexPath.row)
+            currencyRateModel.amount = Double(textField.text!) ?? 0
+            let rowsForReload = (0..<currencyRateModel.popularCurrencies.count).filter {
+                $0 != indexPath.row
+            }
+            tableView.reloadRows(
+                at: rowsForReload.map { IndexPath(row: $0, section: 0) },
+                with: .none)
+        }
     }
 
     @IBAction func addCurrencyAction(_ sender: UIButton) {
