@@ -193,6 +193,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeCurrencyBuySell(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            sellBuyState = .sell
+        } else {
+            sellBuyState = .buy
+        }
     }
 }
 
@@ -224,6 +229,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 for: .editingChanged
             )
 
+            let result: Decimal
+
             switch convertState {
             case .withoutConvert:
                 customCell.currencyTextField.text = ""
@@ -231,15 +238,35 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 if indexPath.row == 0 {
                     customCell.currencyTextField.text = String(currencyRateModel.amount)
                 } else {
-                    let res = Decimal(currencyRateModel.amount) /
-                    currencyRateModel.popularCurrencies[indexPath.row].sale
+                    if sellBuyState == .sell {
+                        result = uahToOtherCurrency(
+                            currencyRateModel.amount,
+                            currencyRateModel.popularCurrencies[indexPath.row].sale
+                        )
+                    } else {
+                        result = uahToOtherCurrency(
+                            currencyRateModel.amount,
+                            currencyRateModel.popularCurrencies[indexPath.row].purchase
+                        )
 
-                    customCell.currencyTextField.text = String(format: "%.2f", Double(truncating: res as NSNumber))
+                    }
+                    customCell.currencyTextField.text = String(format: "%.2f", Double(truncating: result as NSNumber))
+
                 }
             case .chosenCurrencyToUah(let rowNumber):
                 if indexPath.row == 0 {
-                    let res = Decimal(currencyRateModel.amount) * currencyRateModel.popularCurrencies[rowNumber].sale
-                    customCell.currencyTextField.text = String(format: "%.2f", Double(truncating: res as NSNumber))
+                    if sellBuyState == .sell {
+                        result = currencyToUah(
+                            currencyRateModel.amount,
+                            currencyRateModel.popularCurrencies[rowNumber].sale
+                        )
+                    } else {
+                        result = currencyToUah(
+                            currencyRateModel.amount,
+                            currencyRateModel.popularCurrencies[rowNumber].purchase
+                        )
+                    }
+                    customCell.currencyTextField.text = String(format: "%.2f", Double(truncating: result as NSNumber))
 
                 } else if indexPath.row == rowNumber {
                     customCell.currencyTextField.text = String(currencyRateModel.amount)
