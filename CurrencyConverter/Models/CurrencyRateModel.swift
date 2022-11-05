@@ -85,7 +85,10 @@ class CurrencyRateModel {
         let groupedDictionary = Dictionary(grouping: currencies, by: { $0.currency.rawValue.prefix(1) })
         let sortedRates = groupedDictionary.sorted { $0.0 < $1.0 }
 
-        sections.append(Section(sectionName: "Popular", sectionObjects: popularCurrencies))
+        sections.append(Section(
+            sectionName: NSLocalizedString("popular", comment: ""),
+            sectionObjects: popularCurrencies)
+        )
 
         for (key, value) in sortedRates {
             sections.append(Section(sectionName: String(key), sectionObjects: value))

@@ -87,7 +87,7 @@ extension CurrencyListViewController: UISearchResultsUpdating {
         filteredSections.removeAll()
 
         for section in sections {
-            if section.sectionName == "Popular" {
+            if section.sectionName == NSLocalizedString("popular", comment: "") {
                 continue
             }
             
