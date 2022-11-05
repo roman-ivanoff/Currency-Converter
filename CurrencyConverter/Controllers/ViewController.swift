@@ -13,6 +13,11 @@ enum ConvertState {
     case chosenCurrencyToUah(rowNumber: Int)
 }
 
+enum SellBuyState {
+    case buy
+    case sell
+}
+
 // swiftlint: disable: force_cast
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +34,11 @@ class ViewController: UIViewController {
     var popularCurrencies: [CurrencyRate] = []
     var selectedCurrencies: [CurrencyRate] = []
     private var convertState: ConvertState = .withoutConvert
+    private var sellBuyState: SellBuyState = .sell {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     let cellId = "currencyCell"
 
