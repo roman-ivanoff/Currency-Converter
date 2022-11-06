@@ -42,10 +42,34 @@ class CurrencyListViewController: UIViewController {
         registerCell(for: tableView, id: cellId)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.keyboardDismissMode = .onDrag
+        tableView.keyboardDismissMode = .interactive
         navigationController?.title = "Currency"
 
         setupSearchController()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize =
+            (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        tableView.contentInset = .zero
     }
 
     private func registerCell(for tableView: UITableView, id: String) {
@@ -90,7 +114,7 @@ extension CurrencyListViewController: UISearchResultsUpdating {
             if section.sectionName == NSLocalizedString("popular", comment: "") {
                 continue
             }
-            
+
             currencyArray = section.sectionObjects.filter {
                 $0.currency.rawValue.lowercased().contains(searchText.lowercased())
             }
