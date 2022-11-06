@@ -99,17 +99,29 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="X5S-38-8pY" secondAttribute="trailing" constant="16" id="0Ex-Ka-ZE1"/>
+                                    <constraint firstAttribute="trailing" secondItem="X5S-38-8pY" secondAttribute="trailing" constant="16" id="0Ex-Ka-ZE1">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="Ke5-lW-Dqz" secondAttribute="bottom" constant="50" id="48W-xk-mkm"/>
                                     <constraint firstItem="310-Sf-EI9" firstAttribute="top" secondItem="X5S-38-8pY" secondAttribute="bottom" constant="40" id="4lm-tY-bPR"/>
                                     <constraint firstItem="X5S-38-8pY" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="top" constant="16" id="Buo-a7-fCQ"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="top" secondItem="310-Sf-EI9" secondAttribute="bottom" constant="40" id="Pud-AO-krq"/>
                                     <constraint firstItem="Ke5-lW-Dqz" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="SYX-vX-ugv"/>
                                     <constraint firstItem="kif-8i-Zem" firstAttribute="centerX" secondItem="nA6-h6-dt2" secondAttribute="centerX" id="Wv3-ZD-svP"/>
-                                    <constraint firstAttribute="trailing" secondItem="310-Sf-EI9" secondAttribute="trailing" constant="16" id="aDT-De-yj2"/>
-                                    <constraint firstItem="310-Sf-EI9" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="agx-XH-6y5"/>
+                                    <constraint firstAttribute="trailing" secondItem="310-Sf-EI9" secondAttribute="trailing" constant="16" id="aDT-De-yj2">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="231"/>
+                                    </constraint>
+                                    <constraint firstItem="310-Sf-EI9" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="agx-XH-6y5">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="231"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="cuQ-vv-13R" secondAttribute="trailing" id="bpM-rp-ByV"/>
-                                    <constraint firstItem="X5S-38-8pY" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="fbj-d8-hMI"/>
+                                    <constraint firstItem="X5S-38-8pY" firstAttribute="leading" secondItem="nA6-h6-dt2" secondAttribute="leading" constant="16" id="fbj-d8-hMI">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="Ke5-lW-Dqz" secondAttribute="trailing" constant="16" id="n4I-kn-z6Y"/>
                                     <constraint firstItem="kif-8i-Zem" firstAttribute="centerY" secondItem="nA6-h6-dt2" secondAttribute="centerY" id="qXC-cu-hF1"/>
                                     <constraint firstAttribute="bottom" secondItem="cuQ-vv-13R" secondAttribute="bottom" id="szz-rO-huO"/>
@@ -142,18 +154,27 @@
                         <constraints>
                             <constraint firstItem="peD-oR-MgP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4kz-vP-wKm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LCN-Gq-RIj" secondAttribute="trailing" constant="16" id="7XX-cV-djw"/>
-                            <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB"/>
+                            <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
                             <constraint firstItem="BmQ-Js-VmB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ioo-Ug-DIj"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lcu-Iv-HYs"/>
                             <constraint firstItem="peD-oR-MgP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Lsq-Iy-paX"/>
                             <constraint firstAttribute="bottom" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="243" id="MRR-rH-CVH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nA6-h6-dt2" secondAttribute="trailing" constant="16" id="PeY-Yd-Qc0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nA6-h6-dt2" secondAttribute="trailing" constant="16" id="PeY-Yd-Qc0">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="15"/>
+                            </constraint>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="Z3k-Xa-rTx"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZUW-ad-WYm"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="16" id="ghp-2g-puL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BmQ-Js-VmB" secondAttribute="trailing" constant="16" id="nnH-gB-JJs"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="top" secondItem="LCN-Gq-RIj" secondAttribute="bottom" constant="4" id="pVo-dK-rRM"/>
-                            <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="BmQ-Js-VmB" secondAttribute="bottom" constant="33" id="rBP-Hl-mbP"/>
+                            <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="BmQ-Js-VmB" secondAttribute="bottom" constant="33" id="rBP-Hl-mbP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="33"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="5"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9S0-gb-Ksl" secondAttribute="trailing" constant="16" id="xAu-mR-VYW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="peD-oR-MgP" secondAttribute="trailing" id="z5c-w7-DIG"/>
                         </constraints>
