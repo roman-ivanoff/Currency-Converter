@@ -17,12 +17,12 @@ class ArchiveOfExchangeRateService {
     }
 
     func getExchangeRate(
-        date: String = "",
+        date: Date = Date(),
         completion: @escaping(Result<ArchiveOfExchangeRate, QueryServiceError>) -> Void
     ) {
         dataTask?.cancel()
 
-        let exchangeRateDate = date.isEmpty ? getCurrentDate() : date
+        let exchangeRateDate = getStringFromDate(date: date)
 
         if var urlComponents = URLComponents(string: link) {
             urlComponents.queryItems = [
@@ -60,17 +60,10 @@ class ArchiveOfExchangeRateService {
         }
     }
 
-    private func getCurrentDate() -> String {
-        let currentDate = Date()
-        let calendar = Calendar.current
-        let requestComponents: Set<Calendar.Component> = [
-            .year,
-            .month,
-            .day
-        ]
+    private func getStringFromDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d.M.YYYY"
 
-        let dateComponents = calendar.dateComponents(requestComponents, from: currentDate)
-
-        return "\(dateComponents.day!).\(dateComponents.month!).\(dateComponents.year!)"
+        return formatter.string(from: date)
     }
 }
