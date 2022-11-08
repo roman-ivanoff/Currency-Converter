@@ -52,44 +52,11 @@ class ViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            self.tableView.reloadData()
-            self.activityIndicator.stopAnimating()
-            self.showHiddenView()
+            self.reloadTableView()
         } onError: { error in
-            let dialogMessage = UIAlertController(
-                title: "Error",
-                message: error.localizedDescription,
-                preferredStyle: .alert
-            )
-            let okAction = UIAlertAction(title: "OK", style: .cancel)
-            dialogMessage.addAction(okAction)
-            self.present(dialogMessage, animated: true)
+            self.showErrorAlert(error: error)
         }
 
-//        currencyRateModel.getRates { [weak self] result in
-//            guard let self = self else {
-//                return
-//            }
-//
-//            switch result {
-//            case .success:
-//                if let selectedCurrency = self.currencyRateModel.selectedCurrency {
-//                    self.currencyRateModel.popularCurrencies.append(selectedCurrency)
-//                }
-//                self.tableView.reloadData()
-//                self.activityIndicator.stopAnimating()
-//                self.showHiddenView()
-//            case let .failure(error):
-//                let dialogMessage = UIAlertController(
-//                    title: "Error",
-//                    message: error.localizedDescription,
-//                    preferredStyle: .alert
-//                )
-//                let okAction = UIAlertAction(title: "OK", style: .cancel)
-//                dialogMessage.addAction(okAction)
-//                self.present(dialogMessage, animated: true)
-//            }
-//        }
         self.lastUpdatedDateLabel.text =  self.formatDate(date: currencyRateModel.lastUpdateDate ?? Date())
 
         tableView.delegate = self
@@ -140,6 +107,30 @@ class ViewController: UIViewController {
         addCurrencyButton.isHidden = false
     }
 
+    private func hideRateViews() {
+        segmentedControl.isHidden = true
+        tableView.isHidden = true
+        shareButton.isHidden = true
+        addCurrencyButton.isHidden = true
+    }
+
+    private func showErrorAlert(error: Error) {
+        let dialogMessage = UIAlertController(
+            title: "Error",
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        dialogMessage.addAction(okAction)
+        present(dialogMessage, animated: true)
+    }
+
+    private func reloadTableView() {
+        tableView.reloadData()
+        activityIndicator.stopAnimating()
+        showHiddenView()
+    }
+
     private func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM yyyy h:mm a"
@@ -183,6 +174,17 @@ class ViewController: UIViewController {
         return Decimal(amount) * sellBuyRate
     }
 
+    private func getDatePicker() -> UIDatePicker {
+        let datePicker: UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+        datePicker.maximumDate = Date()
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -2, to: Date())
+
+        return datePicker
+    }
+
     @IBAction func addCurrencyAction(_ sender: UIButton) {
         guard let viewController = storyboard?.instantiateViewController(identifier: "currencyList", creator: { coder in
             return CurrencyListViewController(
@@ -198,6 +200,33 @@ class ViewController: UIViewController {
     }
 
     @IBAction func chooseDayForRateAction(_ sender: UIButton) {
+        let datePicker = getDatePicker()
+
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
+        alertController.view.addSubview(datePicker)
+
+        let selectAction = UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+
+            self.hideRateViews()
+            self.activityIndicator.startAnimating()
+
+            self.currencyRateModel.getRates(date: datePicker.date) { [weak self] _ in
+                guard let self = self else {
+                    return
+                }
+                self.reloadTableView()
+            } onError: { error in
+                self.showErrorAlert(error: error)
+            }
+       })
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(selectAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 
     @IBAction func changeCurrencyBuySell(_ sender: UISegmentedControl) {
