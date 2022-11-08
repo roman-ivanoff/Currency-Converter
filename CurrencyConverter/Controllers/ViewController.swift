@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addCurrencyButton: UIButton!
+    @IBOutlet weak var nationalBankButton: UIButton!
 
     let currencyRateModel = CurrencyRateModel()
     var popularCurrencies: [CurrencyRate] = []
@@ -126,6 +127,10 @@ class ViewController: UIViewController {
         ]
         segmentedControl.setTitleTextAttributes(selectedAttribute, for: .selected)
         segmentedControl.removeBorders()
+
+        nationalBankButton.layer.borderWidth = 1
+        nationalBankButton.layer.cornerRadius = 10
+        nationalBankButton.layer.borderColor = UIColor(named: "buttonColor")?.cgColor
     }
 
     private func showHiddenView() {
@@ -190,6 +195,9 @@ class ViewController: UIViewController {
         }
 
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction func chooseDayForRateAction(_ sender: UIButton) {
     }
 
     @IBAction func changeCurrencyBuySell(_ sender: UISegmentedControl) {

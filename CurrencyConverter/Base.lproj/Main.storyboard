@@ -148,6 +148,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-ch-3aC">
+                                <rect key="frame" x="16" y="698" width="358" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="GVk-Bz-rvx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="National Bank Exchange Rate">
+                                    <color key="titleColor" name="buttonColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseDayForRateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XrN-LS-dQS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -157,6 +171,10 @@
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="C4D-3N-NTB">
                                 <variation key="heightClass=regular-widthClass=compact" constant="16"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
+                            <constraint firstItem="ma2-ch-3aC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GGE-o2-0Tf">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="247"/>
                             </constraint>
                             <constraint firstItem="BmQ-Js-VmB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ioo-Ug-DIj"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lcu-Iv-HYs"/>
@@ -168,6 +186,11 @@
                             </constraint>
                             <constraint firstItem="nA6-h6-dt2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="171" id="Z3k-Xa-rTx"/>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZUW-ad-WYm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ma2-ch-3aC" secondAttribute="bottom" constant="56" id="bQc-47-T4T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ma2-ch-3aC" secondAttribute="trailing" constant="16" id="bho-zq-CI1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="247"/>
+                            </constraint>
                             <constraint firstItem="LCN-Gq-RIj" firstAttribute="top" secondItem="nA6-h6-dt2" secondAttribute="bottom" constant="16" id="ghp-2g-puL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BmQ-Js-VmB" secondAttribute="trailing" constant="16" id="nnH-gB-JJs"/>
                             <constraint firstItem="9S0-gb-Ksl" firstAttribute="top" secondItem="LCN-Gq-RIj" secondAttribute="bottom" constant="4" id="pVo-dK-rRM"/>
@@ -186,6 +209,7 @@
                         <outlet property="converterView" destination="nA6-h6-dt2" id="huX-NI-CZD"/>
                         <outlet property="lastUpdatedDateLabel" destination="9S0-gb-Ksl" id="JOb-vq-gGA"/>
                         <outlet property="lastUpdatedTextLabel" destination="LCN-Gq-RIj" id="oAM-0M-Lcd"/>
+                        <outlet property="nationalBankButton" destination="ma2-ch-3aC" id="3ik-jI-zL7"/>
                         <outlet property="segmentedControl" destination="X5S-38-8pY" id="f71-EF-yuR"/>
                         <outlet property="shareButton" destination="cuQ-vv-13R" id="SCM-kK-yRg"/>
                         <outlet property="tableView" destination="310-Sf-EI9" id="SkC-mh-c9d"/>
