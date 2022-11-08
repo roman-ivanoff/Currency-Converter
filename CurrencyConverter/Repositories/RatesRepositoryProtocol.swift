@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RatesRepositoryProtocol {
-    func fetchRates(completion: @escaping(Result<Timestamped<[CurrencyRate]>, Error>) -> Void)
+    func fetchRates(date: Date, completion: @escaping(Result<Timestamped<[CurrencyRate]>, Error>) -> Void)
 }

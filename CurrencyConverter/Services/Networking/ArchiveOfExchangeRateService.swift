@@ -17,7 +17,7 @@ class ArchiveOfExchangeRateService {
     }
 
     func getExchangeRate(
-        date: Date = Date(),
+        date: Date,
         completion: @escaping(Result<ArchiveOfExchangeRate, QueryServiceError>) -> Void
     ) {
         dataTask?.cancel()

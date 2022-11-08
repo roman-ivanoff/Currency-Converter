@@ -16,12 +16,12 @@ class RatesRepository: RatesRepositoryProtocol {
         self.remoteDataSource = remoteDataSource
     }
 
-    func fetchRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
+    func fetchRates(date: Date, completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
         if let localRates = localDataSource.rates, localRates.createdAt.isTheSameHour {
             print("locale")
             completion(.success(localRates))
         } else {
-            remoteDataSource.fetchRates { [localDataSource] result in
+            remoteDataSource.fetchRates(date: date) { [localDataSource] result in
                 print("remote")
                 switch result.map({ Timestamped(wrappedValue: $0) }) {
                 case let .success(rates):

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RatesRemoteDataSourceProtocol {
-    func fetchRates(completion: @escaping(Result<[CurrencyRate], Error>) -> Void)
+    func fetchRates(date: Date, completion: @escaping(Result<[CurrencyRate], Error>) -> Void)
 }

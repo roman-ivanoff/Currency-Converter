@@ -20,10 +20,11 @@ class CurrencyRateModel {
     var amount: Double = 0
 
     func getRates(
+        date: Date = Date(),
         onSuccess: @escaping (Timestamped<[CurrencyRate]>) -> Void,
         onError: @escaping(Error) -> Void
     ) {
-        repository.fetchRates { [weak self] result in
+        repository.fetchRates(date: date) { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -42,27 +43,6 @@ class CurrencyRateModel {
             }
         }
     }
-
-//    func getRates(completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
-//        repository.fetchRates { [weak self] result in
-//            guard let self = self else {
-//                return
-//            }
-//
-//            switch result {
-//            case let .success(rates):
-//                self.popularCurrencies = self.getPopularCurrencies(currencies: rates.wrappedValue)
-//                self.lastUpdateDate = rates.createdAt
-//                self.allCurrenciesInSections = self.getAllRatesSections(
-//                    popularCurrencies: self.popularCurrencies,
-//                    currencies: rates.wrappedValue
-//                )
-//                completion(.success(rates))
-//            case let .failure(error):
-//                completion(.failure(error))
-//            }
-//        }
-//    }
 
     func getPopularCurrencies(currencies: [CurrencyRate]) -> [CurrencyRate] {
         var rates: [CurrencyRate] = []

@@ -9,8 +9,8 @@ import Foundation
 
 class RatesRemoteDataSource: RatesRemoteDataSourceProtocol {
     let rateService = ArchiveOfExchangeRateService()
-    func fetchRates(completion: @escaping (Result<[CurrencyRate], Error>) -> Void) {
-        rateService.getExchangeRate { result in
+    func fetchRates(date: Date, completion: @escaping (Result<[CurrencyRate], Error>) -> Void) {
+        rateService.getExchangeRate(date: date) { result in
             switch result {
             case .success(let rates):
                 let response = rates.exchangeRate
