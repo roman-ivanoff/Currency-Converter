@@ -10,4 +10,5 @@ import Foundation
 struct Timestamped<T: Codable>: Codable {
     var createdAt = Date()
     let wrappedValue: T
+    var lastReceivedDate: Date
 }

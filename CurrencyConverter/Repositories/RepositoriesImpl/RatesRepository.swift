@@ -17,13 +17,15 @@ class RatesRepository: RatesRepositoryProtocol {
     }
 
     func fetchRates(date: Date, completion: @escaping (Result<Timestamped<[CurrencyRate]>, Error>) -> Void) {
-        if let localRates = localDataSource.rates, localRates.createdAt.isTheSameHour {
+        if let localRates = localDataSource.rates, localRates.createdAt.isTheSameHour,
+            let lastRecievedDate = localDataSource.rates?.lastReceivedDate,
+            lastRecievedDate.isTheSameDate(date: date) {
             print("locale")
             completion(.success(localRates))
         } else {
             remoteDataSource.fetchRates(date: date) { [localDataSource] result in
                 print("remote")
-                switch result.map({ Timestamped(wrappedValue: $0) }) {
+                switch result.map({ Timestamped(wrappedValue: $0, lastReceivedDate: date) }) {
                 case let .success(rates):
                     localDataSource.rates = rates
                     completion(.success(rates))
