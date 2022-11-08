@@ -7,7 +7,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -84,7 +83,8 @@
                                     </segmentedControl>
                                     <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="310-Sf-EI9">
                                         <rect key="frame" x="16" y="100" width="326" height="196"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="popularTableBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" name="popularTableBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="currencyCell" id="fEW-FF-tmP" customClass="CurrencyTableViewCell" customModule="CurrencyConverter" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="326" height="44"/>
@@ -97,7 +97,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="popularTableBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="X5S-38-8pY" secondAttribute="trailing" constant="16" id="0Ex-Ka-ZE1">
                                         <variation key="heightClass=regular-widthClass=compact" constant="16"/>
@@ -145,7 +145,7 @@
                                     <constraint firstAttribute="height" constant="42" id="B8h-SI-Lv7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="viewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-ch-3aC" customClass="RoundedButton" customModule="CurrencyConverter" customModuleProvider="target">
@@ -164,7 +164,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="viewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="peD-oR-MgP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4kz-vP-wKm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LCN-Gq-RIj" secondAttribute="trailing" constant="16" id="7XX-cV-djw"/>
@@ -230,11 +230,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-bQ-I3v">
                                 <rect key="frame" x="0.0" y="47" width="390" height="740"/>
-                                <color key="backgroundColor" name="tableBacgroundColor"/>
+                                <color key="backgroundColor" name="popularTableBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L9H-4E-IwV"/>
-                        <color key="backgroundColor" name="tableBacgroundColor"/>
+                        <color key="backgroundColor" name="viewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="L9H-4E-IwV" firstAttribute="trailing" secondItem="V5A-bQ-I3v" secondAttribute="trailing" id="PVJ-QO-ekw"/>
                             <constraint firstItem="V5A-bQ-I3v" firstAttribute="top" secondItem="L9H-4E-IwV" secondAttribute="top" id="Paa-A1-cnT"/>
@@ -280,11 +280,11 @@
         <namedColor name="lastUpdatedColor">
             <color red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="tableBacgroundColor">
-            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="popularTableBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="viewBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
