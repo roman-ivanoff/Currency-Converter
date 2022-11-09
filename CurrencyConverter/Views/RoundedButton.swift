@@ -19,5 +19,12 @@ class RoundedButton: UIButton {
         layer.cornerRadius = 10
         layer.borderColor = UIColor(named: "buttonColor")?.cgColor
     }
-}
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 13.0, *) {
+           if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+               layer.borderColor = UIColor(named: "buttonColor")?.cgColor
+           }
+       }
+    }
+}
