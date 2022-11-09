@@ -11,6 +11,7 @@ class CurrencyListViewController: UIViewController {
     let cellId = "Cell"
     @IBOutlet weak var tableView: UITableView!
     var searchController: UISearchController!
+    private var initialBottomInset: CGFloat = 0
 
     var isSearchBarEmpty: Bool {
         searchController.searchBar.text?.isEmpty ?? true
@@ -63,13 +64,17 @@ class CurrencyListViewController: UIViewController {
 
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize =
-            (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            initialBottomInset = tableView.contentInset.bottom
+            let newBottomInset = keyboardSize.height - view.safeAreaInsets.bottom
+            tableView.contentInset.bottom = newBottomInset
+            tableView.verticalScrollIndicatorInsets.bottom = newBottomInset
         }
     }
 
     @objc private func keyboardWillHide(notification: NSNotification) {
-        tableView.contentInset = .zero
+        tableView.contentInset.bottom = initialBottomInset
+        tableView.verticalScrollIndicatorInsets.bottom = initialBottomInset
     }
 
     private func registerCell(for tableView: UITableView, id: String) {
