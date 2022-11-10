@@ -177,6 +177,7 @@ class ViewController: UIViewController {
         datePicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
         datePicker.maximumDate = Date()
         datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -2, to: Date())
+        datePicker.accessibilityIdentifier = "datePicker"
 
         return datePicker
     }
