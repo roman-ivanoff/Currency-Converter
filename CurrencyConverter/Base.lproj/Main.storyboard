@@ -40,6 +40,7 @@
                                     </activityIndicatorView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuQ-vv-13R">
                                         <rect key="frame" x="314" y="386" width="44" height="44"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="shareButton"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="76B-EP-pB1"/>
                                             <constraint firstAttribute="width" constant="44" id="Qum-hz-n4o"/>
@@ -53,6 +54,7 @@
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-lW-Dqz">
                                         <rect key="frame" x="16" y="336" width="326" height="44"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="addCurrencyButton"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="AC6-nd-vZL"/>
                                         </constraints>
@@ -129,18 +131,21 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Gq-RIj">
                                 <rect key="frame" x="16" y="617" width="358" height="14"/>
+                                <accessibility key="accessibilityConfiguration" identifier="lastUpdatedTextLabel"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 May 2021 7:03 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-gb-Ksl">
                                 <rect key="frame" x="16" y="635" width="358" height="14"/>
+                                <accessibility key="accessibilityConfiguration" identifier="lastUpdatedDateLabel"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" name="lastUpdatedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmQ-Js-VmB">
                                 <rect key="frame" x="16" y="96" width="358" height="42"/>
+                                <accessibility key="accessibilityConfiguration" identifier="currencyConverterLabel"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="B8h-SI-Lv7"/>
                                 </constraints>
@@ -150,6 +155,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-ch-3aC" customClass="RoundedButton" customModule="CurrencyConverter" customModuleProvider="target">
                                 <rect key="frame" x="16" y="698" width="358" height="56"/>
+                                <accessibility key="accessibilityConfiguration" identifier="nationalBankButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="GVk-Bz-rvx"/>
                                 </constraints>
