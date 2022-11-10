@@ -46,11 +46,23 @@
 		FDB9184B28E5870000E6B090 /* RatesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9184A28E5870000E6B090 /* RatesRepository.swift */; };
 		FDBA8E0629146D3B00F49CF4 /* UINavigationBar+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBA8E0529146D3B00F49CF4 /* UINavigationBar+Configuration.swift */; };
 		FDBAECDB28D767080047AC6F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */; };
+		FDBD26A9291D33D10028EF2E /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD26A8291D33D10028EF2E /* CurrencyConverterTests.swift */; };
+		FDBD26B0291D33EC0028EF2E /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBD26AF291D33EC0028EF2E /* MockURLProtocol.swift */; };
 		FDCC3A2028D9101A00261CDA /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */; };
 		FDCC3A2228D9102A00261CDA /* BaseCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */; };
 		FDCC3A2428D9103C00261CDA /* ArchiveOfExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3A2328D9103C00261CDA /* ArchiveOfExchangeRate.swift */; };
 		FDDD62C428D6669F0026A78C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = FDDD62C328D6669F0026A78C /* Fonts */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDBD26AA291D33D10028EF2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD64BF7628CF2F2A00010811 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD64BF7D28CF2F2A00010811;
+			remoteInfo = CurrencyConverter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FD27960928DAE9CF006312B1 /* QueryServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryServiceError.swift; sourceTree = "<group>"; };
@@ -95,6 +107,9 @@
 		FDB9184A28E5870000E6B090 /* RatesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRepository.swift; sourceTree = "<group>"; };
 		FDBA8E0529146D3B00F49CF4 /* UINavigationBar+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Configuration.swift"; sourceTree = "<group>"; };
 		FDBAECDA28D767080047AC6F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
+		FDBD26A6291D33D10028EF2E /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDBD26A8291D33D10028EF2E /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
+		FDBD26AF291D33EC0028EF2E /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		FDCC3A1F28D9101A00261CDA /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		FDCC3A2128D9102A00261CDA /* BaseCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrency.swift; sourceTree = "<group>"; };
 		FDCC3A2328D9103C00261CDA /* ArchiveOfExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveOfExchangeRate.swift; sourceTree = "<group>"; };
@@ -103,6 +118,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		FD64BF7B28CF2F2A00010811 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDBD26A3291D33D10028EF2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				FD64BF8028CF2F2A00010811 /* CurrencyConverter */,
+				FDBD26A7291D33D10028EF2E /* CurrencyConverterTests */,
 				FD64BF7F28CF2F2A00010811 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				FD64BF7E28CF2F2A00010811 /* CurrencyConverter.app */,
+				FDBD26A6291D33D10028EF2E /* CurrencyConverterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +210,15 @@
 				FDBA8E0529146D3B00F49CF4 /* UINavigationBar+Configuration.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FDBD26A7291D33D10028EF2E /* CurrencyConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDBD26A8291D33D10028EF2E /* CurrencyConverterTests.swift */,
+				FDBD26AF291D33EC0028EF2E /* MockURLProtocol.swift */,
+			);
+			path = CurrencyConverterTests;
 			sourceTree = "<group>";
 		};
 		FDBE57B528D6434F00E7BD4D /* Controllers */ = {
@@ -288,6 +321,24 @@
 			productReference = FD64BF7E28CF2F2A00010811 /* CurrencyConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FDBD26A5291D33D10028EF2E /* CurrencyConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDBD26AE291D33D10028EF2E /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */;
+			buildPhases = (
+				FDBD26A2291D33D10028EF2E /* Sources */,
+				FDBD26A3291D33D10028EF2E /* Frameworks */,
+				FDBD26A4291D33D10028EF2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDBD26AB291D33D10028EF2E /* PBXTargetDependency */,
+			);
+			name = CurrencyConverterTests;
+			productName = CurrencyConverterTests;
+			productReference = FDBD26A6291D33D10028EF2E /* CurrencyConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -295,11 +346,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					FD64BF7D28CF2F2A00010811 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					FDBD26A5291D33D10028EF2E = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = FD64BF7D28CF2F2A00010811;
 					};
 				};
 			};
@@ -318,6 +373,7 @@
 			projectRoot = "";
 			targets = (
 				FD64BF7D28CF2F2A00010811 /* CurrencyConverter */,
+				FDBD26A5291D33D10028EF2E /* CurrencyConverterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +390,13 @@
 				FD77E14728D7BF3C00464759 /* CurrencyItem.xib in Resources */,
 				FD64BF8928CF2F2A00010811 /* Main.storyboard in Resources */,
 				FDDD62C428D6669F0026A78C /* Fonts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDBD26A4291D33D10028EF2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +467,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDBD26A2291D33D10028EF2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDBD26A9291D33D10028EF2E /* CurrencyConverterTests.swift in Sources */,
+				FDBD26B0291D33EC0028EF2E /* MockURLProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDBD26AB291D33D10028EF2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD64BF7D28CF2F2A00010811 /* CurrencyConverter */;
+			targetProxy = FDBD26AA291D33D10028EF2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FD64BF8728CF2F2A00010811 /* Main.storyboard */ = {
@@ -607,6 +687,50 @@
 			};
 			name = Release;
 		};
+		FDBD26AC291D33D10028EF2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RomanIvanov.CurrencyConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyConverter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CurrencyConverter";
+			};
+			name = Debug;
+		};
+		FDBD26AD291D33D10028EF2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RomanIvanov.CurrencyConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyConverter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CurrencyConverter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -624,6 +748,15 @@
 			buildConfigurations = (
 				FD64BF9328CF2F2D00010811 /* Debug */,
 				FD64BF9428CF2F2D00010811 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDBD26AE291D33D10028EF2E /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDBD26AC291D33D10028EF2E /* Debug */,
+				FDBD26AD291D33D10028EF2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
