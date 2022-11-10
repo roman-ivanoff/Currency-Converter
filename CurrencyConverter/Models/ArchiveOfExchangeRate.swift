@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArchiveOfExchangeRate: Codable {
+struct ArchiveOfExchangeRate: Codable, Equatable {
     let date: String
     let bank: String
     let baseCurrency: Int

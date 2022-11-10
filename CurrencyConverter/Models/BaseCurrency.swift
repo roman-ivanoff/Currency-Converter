@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum BaseCurrency: String, Codable {
+enum BaseCurrency: String, Codable, Equatable {
     case uah = "UAH"
 }

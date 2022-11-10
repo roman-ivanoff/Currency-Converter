@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExchangeRate: Codable {
+struct ExchangeRate: Codable, Equatable {
     let baseCurrency: BaseCurrency
     let saleRateNB: Double
     let purchaseRateNB: Double
