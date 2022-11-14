@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Timestamped<T: Codable>: Codable {
+struct Timestamped<T: Codable>: Codable, Equatable {
+    static func == (lhs: Timestamped<T>, rhs: Timestamped<T>) -> Bool {
+        lhs.createdAt == rhs.createdAt
+    }
+    
     var createdAt = Date()
     let wrappedValue: T
     var lastReceivedDate: Date
