@@ -7,11 +7,11 @@
 
 import Foundation
 
-class RatesRepository: RatesRepositoryProtocol {
-    private let localDataSource: RatesLocalDataSource
-    private let remoteDataSource: RatesRemoteDataSource
+class RatesRepository<L: RatesLocalDataSourceProtocol, R: RatesRemoteDataSourceProtocol>: RatesRepositoryProtocol {
+    private var localDataSource: L
+    private let remoteDataSource: R
 
-    init(localDataSource: RatesLocalDataSource, remoteDataSource: RatesRemoteDataSource) {
+    init(localDataSource: L, remoteDataSource: R) {
         self.localDataSource = localDataSource
         self.remoteDataSource = remoteDataSource
     }
@@ -23,11 +23,11 @@ class RatesRepository: RatesRepositoryProtocol {
             print("locale")
             completion(.success(localRates))
         } else {
-            remoteDataSource.fetchRates(date: date) { [localDataSource] result in
+            remoteDataSource.fetchRates(date: date) { result in
                 print("remote")
                 switch result.map({ Timestamped(wrappedValue: $0, lastReceivedDate: date) }) {
                 case let .success(rates):
-                    localDataSource.rates = rates
+                    self.localDataSource.rates = rates
                     completion(.success(rates))
                 case let .failure(error):
                     completion(.failure(error))
