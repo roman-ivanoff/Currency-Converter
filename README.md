@@ -23,5 +23,8 @@ Add the ability to view the national bank exchange rate on the selected day for 
   - MVC
   - Design instruments: Figma
 
-![](https://github.com/roman-ivanoff/Currency-Coonverter/blob/main/1.gif) ![](https://github.com/roman-ivanoff/Currency-Coonverter/blob/main/2.gif) 
+![](https://github.com/roman-ivanoff/Currency-Coonverter/blob/main/1.gif)
+
+![](https://github.com/roman-ivanoff/Currency-Coonverter/blob/main/2.gif)
+
 ![](https://github.com/roman-ivanoff/Currency-Coonverter/blob/main/3.gif)
